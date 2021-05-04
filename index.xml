@@ -6,7 +6,34 @@
     <description>Recent content on 文文小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Apr 2021 19:39:03 +0800</lastBuildDate><atom:link href="https://jangqi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 May 2021 21:27:22 +0800</lastBuildDate><atom:link href="https://jangqi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机原理-存储器</title>
+      <link>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8%E5%99%A8/</link>
+      <pubDate>Wed, 28 Apr 2021 19:39:03 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机原理 处理器</title>
+      <link>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%A4%84%E7%90%86%E5%99%A8/</link>
+      <pubDate>Tue, 04 May 2021 18:10:45 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%A4%84%E7%90%86%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>软件开发</title>
+      <link>https://jangqi.github.io/post/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%B4%BB%E5%8A%A8/</link>
+      <pubDate>Mon, 05 Apr 2021 18:41:12 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%B4%BB%E5%8A%A8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>C语言</title>
       <link>https://jangqi.github.io/post/c%E8%AF%AD%E8%A8%80/</link>
@@ -26,21 +53,14 @@
     </item>
     
     <item>
-      <title>软件开发活动</title>
-      <link>https://jangqi.github.io/post/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%B4%BB%E5%8A%A8/</link>
-      <pubDate>Mon, 05 Apr 2021 18:41:12 +0800</pubDate>
-      
-      <guid>https://jangqi.github.io/post/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%B4%BB%E5%8A%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Theme preview</title>
       <link>https://jangqi.github.io/post/even-preview/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
       <guid>https://jangqi.github.io/post/even-preview/</guid>
-      <description>Based on MarkdownPreview test.md. Markdown 1 2 3 4 5 6 7 8 # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 ### Duplicate Header ### Duplicate Header H1 H2 H3 H4 H5 H6 Duplicate Header Duplicate Header Paragraphs 1 2 3 4 This is a paragraph. I am still part of the paragraph. New paragraph. This is a paragraph. I am still part of the paragraph.</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Based on &lt;a href=&#34;https://github.com/facelessuser/MarkdownPreview/blob/master/examples/test.md&#34;&gt;MarkdownPreview test.md&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -53,11 +73,11 @@
     </item>
     
     <item>
-      <title>计算机原理-存储器</title>
-      <link>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8%E5%99%A8/</link>
-      <pubDate>Wed, 28 Apr 2021 19:39:03 +0800</pubDate>
+      <title>计算机原理 通信</title>
+      <link>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Tue, 04 May 2021 21:27:22 +0800</pubDate>
       
-      <guid>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8%E5%99%A8/</guid>
+      <guid>https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E9%80%9A%E4%BF%A1/</guid>
       <description></description>
     </item>
     

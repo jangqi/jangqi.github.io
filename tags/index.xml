@@ -6,7 +6,25 @@
     <description>Recent content in Tags on 文文小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Apr 2021 19:39:03 +0800</lastBuildDate><atom:link href="https://jangqi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 May 2021 21:27:22 +0800</lastBuildDate><atom:link href="https://jangqi.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>串口通信</title>
+      <link>https://jangqi.github.io/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Tue, 04 May 2021 21:27:22 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>处理器</title>
+      <link>https://jangqi.github.io/tags/%E5%A4%84%E7%90%86%E5%99%A8/</link>
+      <pubDate>Tue, 04 May 2021 18:10:45 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/tags/%E5%A4%84%E7%90%86%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>存储器</title>
       <link>https://jangqi.github.io/tags/%E5%AD%98%E5%82%A8%E5%99%A8/</link>
@@ -44,38 +62,11 @@
     </item>
     
     <item>
-      <title>preview</title>
-      <link>https://jangqi.github.io/tags/preview/</link>
+      <title>hugo</title>
+      <link>https://jangqi.github.io/tags/hugo/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://jangqi.github.io/tags/preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-3</title>
-      <link>https://jangqi.github.io/tags/tag-3/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://jangqi.github.io/tags/tag-3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Theme preview</title>
-      <link>https://jangqi.github.io/tags/theme-preview/</link>
-      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://jangqi.github.io/tags/theme-preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>even</title>
-      <link>https://jangqi.github.io/tags/even/</link>
-      <pubDate>Tue, 30 Aug 2016 16:01:23 +0800</pubDate>
-      
-      <guid>https://jangqi.github.io/tags/even/</guid>
+      <guid>https://jangqi.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

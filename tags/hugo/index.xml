@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on 文文小站</title>
+    <link>https://jangqi.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on 文文小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0800</lastBuildDate><atom:link href="https://jangqi.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Theme preview</title>
+      <link>https://jangqi.github.io/post/even-preview/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/even-preview/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Based on &lt;a href=&#34;https://github.com/facelessuser/MarkdownPreview/blob/master/examples/test.md&#34;&gt;MarkdownPreview test.md&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo-Shortcodes</title>
+      <link>https://jangqi.github.io/post/shortcodes/</link>
+      <pubDate>Tue, 30 Aug 2016 16:01:23 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/shortcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo-Highlight</title>
+      <link>https://jangqi.github.io/post/hugo-highlighting/</link>
+      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/hugo-highlighting/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
