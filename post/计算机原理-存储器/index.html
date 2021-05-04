@@ -167,7 +167,7 @@
       <h1 id="存储器">存储器</h1>
 <h2 id="ram">RAM</h2>
 <p>这种8位锁存器的配置称为<code>RAM</code>，也叫做<code>读/写存储器</code>或<code>随机访问存储器</code>。</p>
-<p><code>8×1RAM</code>可以存储8个单独的1位bit，通过改变三根地址线的输入就可以在8个锁存器的任意一个读出或写入1位bit。</p>
+<p><code>8×1RAM</code>可以存储8个单独的1位bit，通过改变3根地址线的输入就可以在8个锁存器的任意一个读出或写入1位bit。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504132933.png" alt="image-20210504132930383" style="zoom:50%;" /></p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133107.png" alt="image-20210504133028008" style="zoom:50%;" /></p>
 <ul>
@@ -181,11 +181,13 @@
 <h2 id="ram阵列">RAM阵列</h2>
 <p>将<code>RAM</code>进行特殊的配置可形成<code>RAM阵列</code>。</p>
 <h3 id="161ram阵列">16×1RAM阵列</h3>
-<p><code>16×1RAM阵列</code>是从2个<code>8×1RAM</code>选择一个进行写入或读出数据，在这里选择输入是第四根地址线。</p>
-<p><code>16×1RAM阵列</code>可以存储16个单独的1位bit。</p>
-<p>$RAM阵列的存储容量=2^{地址线数目}$</p>
-<p><img src="https://gitee.com/jangqi/picgo/raw/master/20210428212036.png" alt="image-20210428210844498"></p>
-<p><img src="https://gitee.com/jangqi/picgo/raw/master/20210429092636.png" alt="image-20210428212112442"></p>
+<p><code>16×1RAM阵列</code>是从2个<code>8×1RAM</code>选择一个进行写入或读出数据，在这里选择输入是第4根地址线。</p>
+<p><code>16×1RAM阵列</code>可以存储16个单独的1位bit。
+$$
+RAM阵列的存储容量=2^{地址线数目}
+$$
+<img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504174702.png" alt="image-20210504174700579" style="zoom:50%;" /></p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504174722.png" alt="image-20210504174721108" style="zoom:50%;" /></p>
 <h3 id="82ram阵列">8×2RAM阵列</h3>
 <p><code>8×2RAM阵列</code>是通过共享地址的方式可以把两个<code>8×1RAM阵列</code>连接起来。</p>
 <p><code>8×2RAM阵列</code>使用相同的地址在2个8×1RAM阵列中存储8组bit，每组有2位bit。</p>
@@ -196,21 +198,7 @@
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504141714.png" alt="image-20210504141710732" style="zoom:50%;" /></p>
     </div>
 
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">一只胖兔</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-        2021-04-28
-        
-    </span>
-  </p>
-  
-  
-</div>
+    
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/%E5%AD%98%E5%82%A8%E5%99%A8/">存储器</a>
@@ -293,7 +281,7 @@
         }
     };
   </script>
-  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 
