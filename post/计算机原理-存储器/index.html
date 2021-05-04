@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>计算机原理-存储器 - 文文小站</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="一只胖兔" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8%E5%99%A8/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="计算机原理-存储器" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8%E5%99%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-28T19:39:03&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-28T19:39:03&#43;08:00" />
+
+<meta itemprop="name" content="计算机原理-存储器">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-04-28T19:39:03&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-28T19:39:03&#43;08:00" />
+<meta itemprop="wordCount" content="436">
+<meta itemprop="keywords" content="存储器," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="计算机原理-存储器"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文文小站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文文小站</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">计算机原理-存储器</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-04-28 </span>
+        <div class="post-category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
+            </div>
+          <span class="more-meta"> 约 436 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#存储器">存储器</a>
+      <ul>
+        <li><a href="#ram">RAM</a></li>
+        <li><a href="#ram阵列">RAM阵列</a>
+          <ul>
+            <li><a href="#161ram阵列">16×1RAM阵列</a></li>
+            <li><a href="#82ram阵列">8×2RAM阵列</a></li>
+            <li><a href="#更大的ram阵列">更大的RAM阵列</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="存储器">存储器</h1>
+<h2 id="ram">RAM</h2>
+<p>这种8位锁存器的配置称为<code>RAM</code>，也叫做<code>读/写存储器</code>或<code>随机访问存储器</code>。</p>
+<p><code>8×1RAM</code>可以存储8个单独的1位bit，通过改变三根地址线的输入就可以在8个锁存器的任意一个读出或写入1位bit。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504132933.png" alt="image-20210504132930383" style="zoom:50%;" /></p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133107.png" alt="image-20210504133028008" style="zoom:50%;" /></p>
+<ul>
+<li><strong>写入数据（3-8译码器）</strong></li>
+</ul>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133430.png" alt="image-20210504133429405" style="zoom:50%;" /></p>
+<ul>
+<li><strong>读出数据（8-1选择器）</strong></li>
+</ul>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133249.png" alt="image-20210504133248025" style="zoom:50%;" /></p>
+<h2 id="ram阵列">RAM阵列</h2>
+<p>将<code>RAM</code>进行特殊的配置可形成<code>RAM阵列</code>。</p>
+<h3 id="161ram阵列">16×1RAM阵列</h3>
+<p><code>16×1RAM阵列</code>是从2个<code>8×1RAM</code>选择一个进行写入或读出数据，在这里选择输入是第四根地址线。</p>
+<p><code>16×1RAM阵列</code>可以存储16个单独的1位bit。</p>
+<p>$RAM阵列的存储容量=2^{地址线数目}$</p>
+<p><img src="https://gitee.com/jangqi/picgo/raw/master/20210428212036.png" alt="image-20210428210844498"></p>
+<p><img src="https://gitee.com/jangqi/picgo/raw/master/20210429092636.png" alt="image-20210428212112442"></p>
+<h3 id="82ram阵列">8×2RAM阵列</h3>
+<p><code>8×2RAM阵列</code>是通过共享地址的方式可以把两个<code>8×1RAM阵列</code>连接起来。</p>
+<p><code>8×2RAM阵列</code>使用相同的地址在2个8×1RAM阵列中存储8组bit，每组有2位bit。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133755.png" alt="image-20210504133753511" style="zoom:50%;" /></p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133814.png" alt="image-20210504133811984" style="zoom:50%;" /></p>
+<h3 id="更大的ram阵列">更大的RAM阵列</h3>
+<p><code>1024×8RAM阵列</code>是由8个<code>1024×1RAM阵列</code>组成，有10条地址线($2^{10}=1024$) ，有8个数据输入端和8个数据输出端。可以存储1024组bit,每组有8位bit。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504141714.png" alt="image-20210504141710732" style="zoom:50%;" /></p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">一只胖兔</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-04-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%AD%98%E5%82%A8%E5%99%A8/">存储器</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/even-preview/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Theme preview</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/shortcodes/">
+            <span class="next-text nav-default">hugo-Shortcodes</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="jangqi/utterances"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:jangqi@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/jangqi" class="iconfont icon-github" title="github"></a>
+  <a href="https://jangqi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>一只胖兔</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://jangqi.github.io/sitemap.xml
