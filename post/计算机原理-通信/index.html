@@ -49,7 +49,7 @@
 <meta itemprop="name" content="计算机原理-串口通信">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-04T21:27:22&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-04T21:27:22&#43;08:00" />
-<meta itemprop="wordCount" content="240">
+<meta itemprop="wordCount" content="470">
 <meta itemprop="keywords" content="串口通信," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="计算机原理-串口通信"/>
 <meta name="twitter:description" content=""/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
             </div>
-          <span class="more-meta"> 约 240 字 </span>
+          <span class="more-meta"> 约 470 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -147,8 +147,9 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#串口通信">串口通信</a>
+    <li><a href="#通信">通信</a>
       <ul>
+        <li><a href="#串口通信">串口通信</a></li>
         <li><a href="#字节流">字节流</a></li>
       </ul>
     </li>
@@ -157,9 +158,13 @@
   </div>
 </div>
     <div class="post-content">
-      <h1 id="串口通信">串口通信</h1>
+      <h1 id="通信">通信</h1>
 <p>计算机原理：编码(二进制数)-通信（字节流）-存储（RAM）-运算（CPU）</p>
+<p>通信中的两个方面：信息表示和解析方法+信息传输方法。</p>
+<p>通信协议：串口通信协议是指规定了数据包的内容，内容包含了起始位、主体数据、校验位及停止位，双方需要约定一致的数据包格式才能正常收发数据的有关规范。在串口通信中，常用的协议包括RS-232、RS-422和RS-485。</p>
+<h2 id="串口通信">串口通信</h2>
 <p>串口通信是按位（bit）发送和接收字节。尽管比按字节（byte）的并行通信慢，但是串口可以在使用一根线发送数据的同时用另一根线接收数据。它很简单并且能够实现远距离通信。</p>
+<p><a href="https://baike.baidu.com/item/%E4%B8%B2%E5%8F%A3/1250303">串口</a>在嵌入式系统当中是一类重要的数据通信接口，其本质功能是作为 CPU 和串行设备间的编码<a href="https://baike.baidu.com/item/%E8%BD%AC%E6%8D%A2%E5%99%A8/4272">转换器</a>。当数据从 CPU 经过串行端口发送出去时，字节数据转换为串行的位；在接收数据时，串行的位被转换为字节数据。</p>
 <h2 id="字节流">字节流</h2>
 <p>字节流是由字节组成byte[]数组。</p>
 <p>字节流是程序输入或输出的一个连续的字节序列，设备（例如鼠标，键盘，磁盘，屏幕和打印机）的输入和输出都是用流来处理的。</p>
