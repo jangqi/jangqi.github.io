@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>C语言 指针 - 文文小站</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="一只胖兔" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://jangqi.github.io/post/c%E8%AF%AD%E8%A8%80-%E6%8C%87%E9%92%88/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="C语言 指针" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jangqi.github.io/post/c%E8%AF%AD%E8%A8%80-%E6%8C%87%E9%92%88/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-05T20:47:55&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-05T20:47:55&#43;08:00" />
+
+<meta itemprop="name" content="C语言 指针">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-05T20:47:55&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-05T20:47:55&#43;08:00" />
+<meta itemprop="wordCount" content="1016">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C语言 指针"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文文小站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文文小站</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">C语言 指针</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-05-05 </span>
+        
+          <span class="more-meta"> 约 1016 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#指针">指针</a>
+      <ul>
+        <li><a href="#使用指针">使用指针</a></li>
+      </ul>
+    </li>
+    <li><a href="#const与指针">const与指针</a></li>
+    <li><a href="#数组与指针">数组与指针</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#数组">数组</a></li>
+            <li><a href="#数组名与指针">数组名与指针</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#函数与指针">函数与指针</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="指针">指针</h1>
+<p>指针也是变量，指针变量存储的是内存地址，通过指针变量中记录的内存地址去访问内存。</p>
+<h2 id="使用指针">使用指针</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 声明指针*/</span>
+	<span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>
+	<span class="c1">//指针变量与普通变量一样默认值是随机的，一般初始为 NULL。
+</span><span class="c1"></span>	<span class="c1">//针的类型决定了它可以访问多少个字节。
+</span><span class="c1"></span>
+<span class="cm">/** 指针赋值*/</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+	
+<span class="cm">/** 解引用*/</span>
+	<span class="o">*</span><span class="n">p</span>
+    <span class="c1">//通指针变量中记录的内存编号去访问内存，该过程可能产生段错误，原因是里面存储的内存编号是非法的。
+</span><span class="c1"></span>    <span class="c1">//访问的字节数由指针变量的类型决定。  
+</span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>空指针</strong>：值为NULL的指针变量叫空指针，如果进行解引用就会产生段错误。</p>
+<p>NULL也是一种错误标志，如果一个函数返回值是指针类型，当函数执行出错返回值就是NULL。</p>
+<p>当函数的参数是指针，别人传给你的就有可能是空指针。</p>
+<p>从函数获取的返回值也可能是空指针。</p>
+<p>如何避免空指针带来的段错误：使用来历不明的指针前做判断。if(NULL == p)</p>
+<p>注意：NULL在绝大多数系统中是0，在个别系统中是1。</p>
+</blockquote>
+<blockquote>
+<p><strong>野指针</strong>：指向不确定的内存空间。</p>
+<p>如何避免产生野指针：</p>
+<p>1.定义指针变量时一定初始化。</p>
+<p>2.函数不返回栈内存的地址。</p>
+<p>3.指针指向的内存释放后，指针变量要及时置空。</p>
+</blockquote>
+<h1 id="const与指针">const与指针</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>  <span class="c1">//指针所指向的内存不可修改，传参时变量有被修改的风险，这种写法可以保护指针所指向的内存。
+</span><span class="c1"></span><span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span> <span class="c1">//指针变量不可被修改，它不能再指向别的变量。
+</span><span class="c1"></span><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span> <span class="c1">//指针变量和指针所指向的内存都不可修改。它既不能再指向别的常量，指向的值也不能修改。
+</span></code></pre></td></tr></table>
+</div>
+</div><h1 id="数组与指针">数组与指针</h1>
+<h3 id="数组">数组</h3>
+<blockquote>
+<p>从内存角度讲，数组变量就是一次分配多个变量，而且这些变量存储单元的地址是依次相连接的。</p>
+</blockquote>
+<h3 id="数组名与指针">数组名与指针</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//除了作为函数参数的数组名总是编译器转化为指针，其他情况下，指针就是指针，数组名就是数组名
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">;</span>  <span class="c1">//对
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">a</span><span class="p">[];</span> <span class="n">a</span><span class="o">++</span><span class="err">；</span><span class="c1">//错,数组名是地址常量，不能进行++或--。
+</span><span class="c1"></span>
+<span class="c1">//数组有两种表示方法，实际上，C语言描述数组时确实借助了指针。
+</span><span class="c1">//数组下标方式只是编译器提供给编程者一种壳（语法糖）而已。
+</span><span class="c1">//实质上在编译器内部都是用指针方式来访问数组元素的。
+</span><span class="c1"></span>
+<span class="cm">/** 数组表示法*/</span>
+<span class="kt">void</span> <span class="n">F_Array</span><span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>	<span class="c1">//数组int array[]等同于指针int* array形式
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;array1[%d] = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="c1">//数组形式访问数组元素
+</span><span class="c1"></span>	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* *指针表示法*/</span>
+<span class="kt">void</span> <span class="n">F_Array_P</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>     <span class="c1">//指向int类型的指针和偏移量n
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>  
+		<span class="c1">//到内存地址array位置，移动i个int单元，检索存储在那里的int值
+</span><span class="c1"></span>		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;*(array+%d) = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">array</span> <span class="o">+</span> <span class="n">i</span><span class="p">));</span> 
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="函数与指针">函数与指针</h1>
+    </div>
+
+    
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/even-preview/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Theme preview</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/c%E8%AF%AD%E8%A8%80-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%92%8C%E4%BD%8D%E6%93%8D%E4%BD%9C/">
+            <span class="next-text nav-default">c语言-数据存储和位操作</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="jangqi/utterances"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:jangqi@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/jangqi" class="iconfont icon-github" title="github"></a>
+  <a href="https://jangqi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>一只胖兔</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
