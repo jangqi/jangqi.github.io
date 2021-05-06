@@ -49,7 +49,7 @@
 <meta itemprop="name" content="计算机原理-处理">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-04T18:10:45&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-04T18:10:45&#43;08:00" />
-<meta itemprop="wordCount" content="847">
+<meta itemprop="wordCount" content="856">
 <meta itemprop="keywords" content="处理器," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="计算机原理-处理"/>
 <meta name="twitter:description" content=""/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
             </div>
-          <span class="more-meta"> 约 847 字 </span>
+          <span class="more-meta"> 约 856 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -165,15 +165,15 @@
 <p>CPU通过数据总线、地址总线、控制总线与内存进行数据传输与操作。每个CPU都有很多管脚，这些管脚和总线相连。</p>
 <p><img src="https://pic4.zhimg.com/80/v2-c436ad1765cafdda1c9caf4411b97ce7_1440w.jpg" alt="img" style="zoom:50%;" /></p>
 <h2 id="地址总线">地址总线</h2>
-<p>功能：CPU用来寻找内存的地址。</p>
+<p>功能：CPU（MAR地址寄存器）用来寻找内存的地址。</p>
 <p>特点：地址总线的宽度决定了CPU的寻址范围，一根地址总线只能存放一个二进制数。
 $$
 CPU寻址范围=2^{地址总线数目}
 $$
-CPU说的32位就是数据总线的位数为32位，也就是其描述的地址空间为0x0000 0000 0000 0000 ~ $2^{32}-1$，对应一个地址就是4个字节(可以用8位十六进制数表示)。</p>
+CPU说的32位就是数据总线的位数为32位，也就是其描述的地址空间为0x0000 0000 0000 0000 ~ $2^{32}-1$，所以地址编号就占4个字节(可以用8位十六进制数表示)。</p>
 <h2 id="数据总线">数据总线</h2>
 <p>功能：CPU与其他器件进行数据传输。</p>
-<p>特点：数据总线的宽度决定了CPU单次数据传输的传送，一根数据总线只能存放一个二进制数。因此N根数据总线，一次最多只能传送N位二进制。</p>
+<p>特点：数据总线的宽度决定了CPU的单次数据传输量。一根数据总线只能存放一个二进制数。因此N根数据总线，一次最多只能传送N位二进制。</p>
 <p>所以在32位CPU中，编程用到的数据类型，如整型，应优先使用int，一个int占4字节，一个字节为8bit，总共32bit，一次完成传输需要32位数据总线。而比int占用更小的数据类型，如short int，在32位CPU中要完成一次传输也是需要32位数据总线。</p>
 <h2 id="控制总线">控制总线</h2>
 <p>功能：例如读写信号控制线。</p>
