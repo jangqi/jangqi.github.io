@@ -49,7 +49,7 @@
 <meta itemprop="name" content="C语言 指针">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-05T20:47:55&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-05T20:47:55&#43;08:00" />
-<meta itemprop="wordCount" content="1016">
+<meta itemprop="wordCount" content="1061">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C语言 指针"/>
 <meta name="twitter:description" content=""/>
@@ -134,7 +134,7 @@
       <div class="post-meta">
         <span class="post-time"> 2021-05-05 </span>
         
-          <span class="more-meta"> 约 1016 字 </span>
+          <span class="more-meta"> 约 1061 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
@@ -156,11 +156,12 @@
         <li>
           <ul>
             <li><a href="#数组">数组</a></li>
-            <li><a href="#数组名与指针">数组名与指针</a></li>
           </ul>
         </li>
+        <li><a href="#数组表示法和指针表示法">数组表示法和指针表示法</a></li>
       </ul>
     </li>
+    <li><a href="#结构体与指针">结构体与指针</a></li>
     <li><a href="#函数与指针">函数与指针</a></li>
   </ul>
 </nav>
@@ -168,7 +169,7 @@
 </div>
     <div class="post-content">
       <h1 id="指针">指针</h1>
-<p>指针也是变量，指针变量存储的是内存地址，通过指针变量中记录的内存地址去访问内存。</p>
+<p>指针变量存储的是内存地址，通过指针变量中记录的内存地址去访问内存，指针变量的类型决定访问的地址长度。</p>
 <h2 id="使用指针">使用指针</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -184,21 +185,27 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 声明指针*/</span>
-	<span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>
-	<span class="c1">//指针变量与普通变量一样默认值是随机的，一般初始为 NULL。
-</span><span class="c1"></span>	<span class="c1">//针的类型决定了它可以访问多少个字节。
-</span><span class="c1"></span>
-<span class="cm">/** 指针赋值*/</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="cm">/** 声明指针*/</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/*指针变量与普通变量一样默认值是随机的，一般初始为 NULL*/</span>
+
+<span class="cm">/** 赋值*/</span> 
+<span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>  <span class="cm">/*int a的地址（四字节的首地址）赋给指针变量p*/</span>
 	
 <span class="cm">/** 解引用*/</span>
-	<span class="o">*</span><span class="n">p</span>
-    <span class="c1">//通指针变量中记录的内存编号去访问内存，该过程可能产生段错误，原因是里面存储的内存编号是非法的。
-</span><span class="c1"></span>    <span class="c1">//访问的字节数由指针变量的类型决定。  
-</span></code></pre></td></tr></table>
+<span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="err">；</span> <span class="cm">/*指针变量的类型决定访问内存地址的延续长度*/</span>
+    
+<span class="cm">/** 指针加减整数,指针递增或递减*/</span>
+<span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>  <span class="cm">/*地址移动2个int单元*/</span>
+<span class="n">p</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">p</span><span class="o">++</span><span class="p">;</span>
+<span class="n">p</span><span class="o">--</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p><strong>空指针</strong>：值为NULL的指针变量叫空指针，如果进行解引用就会产生段错误。</p>
@@ -223,17 +230,16 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>  <span class="c1">//指针所指向的内存不可修改，传参时变量有被修改的风险，这种写法可以保护指针所指向的内存。
-</span><span class="c1"></span><span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span> <span class="c1">//指针变量不可被修改，它不能再指向别的变量。
-</span><span class="c1"></span><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span> <span class="c1">//指针变量和指针所指向的内存都不可修改。它既不能再指向别的常量，指向的值也不能修改。
-</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/*指针指向的内存不可修改，指针传参时变量有被修改的风险，这种写法可以保护指针所指向的内存*/</span>
+<span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/*指针变量不可被修改，不能更改指针指向的地址*/</span>
+<span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span> <span class="cm">/*指针即不能更改它所指向的地址，也不能修改指向地址上的值*/</span>
+</code></pre></td></tr></table>
 </div>
 </div><h1 id="数组与指针">数组与指针</h1>
 <h3 id="数组">数组</h3>
-<blockquote>
-<p>从内存角度讲，数组变量就是一次分配多个变量，而且这些变量存储单元的地址是依次相连接的。</p>
-</blockquote>
-<h3 id="数组名与指针">数组名与指针</h3>
+<p>从内存角度，数组变量就是一次分配多个变量，而且这些变量的存储地址是依次相连的。</p>
+<h2 id="数组表示法和指针表示法">数组表示法和指针表示法</h2>
+<p>数组下标方式和指针方式均可以访问数组元素，两者的实质其实是一样的。在编译器内部都是用指针方式来访问数组元素的，数组下标方式只是编译器提供给编程者一种壳（语法糖）而已。用指针方式来访问数组才是本质做法。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -248,51 +254,50 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//除了作为函数参数的数组名总是编译器转化为指针，其他情况下，指针就是指针，数组名就是数组名
-</span><span class="c1"></span>	<span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">;</span>  <span class="c1">//对
-</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">a</span><span class="p">[];</span> <span class="n">a</span><span class="o">++</span><span class="err">；</span><span class="c1">//错,数组名是地址常量，不能进行++或--。
-</span><span class="c1"></span>
-<span class="c1">//数组有两种表示方法，实际上，C语言描述数组时确实借助了指针。
-</span><span class="c1">//数组下标方式只是编译器提供给编程者一种壳（语法糖）而已。
-</span><span class="c1">//实质上在编译器内部都是用指针方式来访问数组元素的。
-</span><span class="c1"></span>
-<span class="cm">/** 数组表示法*/</span>
-<span class="kt">void</span> <span class="n">F_Array</span><span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>	<span class="c1">//数组int array[]等同于指针int* array形式
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;array1[%d] = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="c1">//数组形式访问数组元素
-</span><span class="c1"></span>	<span class="p">}</span>
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 数组表示法*/</span>
+<span class="cm">/** 作为函数参数的数组名总是编译器转化为指针*/</span>
+<span class="kt">void</span> <span class="nf">F_Array</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>	<span class="cm">/*int array[]等同于指针int *arr形式*/</span>
+<span class="p">{</span>
+	<span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>	  <span class="cm">/* arr[1]等同于*(arr+1)*/</span>
 <span class="p">}</span>
 
-<span class="cm">/* *指针表示法*/</span>
-<span class="kt">void</span> <span class="n">F_Array_P</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>     <span class="c1">//指向int类型的指针和偏移量n
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="p">{</span>  
-		<span class="c1">//到内存地址array位置，移动i个int单元，检索存储在那里的int值
-</span><span class="c1"></span>		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;*(array+%d) = %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">array</span> <span class="o">+</span> <span class="n">i</span><span class="p">));</span> 
-	<span class="p">}</span>
+<span class="cm">/** 指针表示法*/</span>
+<span class="kt">void</span> <span class="nf">F_Array_P</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>     <span class="cm">/*指向int类型的指针和偏移量n做形式参数*/</span>
+<span class="p">{</span>
+	<span class="o">*</span><span class="p">(</span><span class="n">arr</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>  <span class="cm">/*从内存arr位置，移动1个int单元，对下一个int单元赋值*/</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="结构体与指针">结构体与指针</h1>
+<p>结构体作为函数的参数时，使用结构体指针效率更高。</p>
+<p>指针访问结构成员变量的两种方式：<code>指针-&gt;运算符</code>和<code>(*指针).运算符</code>等效。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">S_Struct_TYPE</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span><span class="n">S_TYPE</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">F_Struct</span><span class="p">(</span><span class="n">S_TYPE</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/*等效（*p).a*/</span>
+    <span class="o">*</span><span class="n">p</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="cm">/*等效p-&gt;a*/</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
