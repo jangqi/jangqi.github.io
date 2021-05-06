@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>软件开发 - 文文小站</title>
+  <title>计算机原理-存储 - 文文小站</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.83.1 with theme even" />
 
 
-<link rel="canonical" href="https://jangqi.github.io/post/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" />
+<link rel="canonical" href="https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="软件开发" />
+<meta property="og:title" content="计算机原理-存储" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jangqi.github.io/post/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-04-05T18:41:12&#43;08:00" />
-<meta property="article:modified_time" content="2021-04-05T18:41:12&#43;08:00" />
+<meta property="og:url" content="https://jangqi.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%AD%98%E5%82%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-28T19:39:03&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-28T19:39:03&#43;08:00" />
 
-<meta itemprop="name" content="软件开发">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-04-05T18:41:12&#43;08:00" />
-<meta itemprop="dateModified" content="2021-04-05T18:41:12&#43;08:00" />
-<meta itemprop="wordCount" content="670">
-<meta itemprop="keywords" content="编程认知," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="软件开发"/>
+<meta itemprop="name" content="计算机原理-存储">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-04-28T19:39:03&#43;08:00" />
+<meta itemprop="dateModified" content="2021-04-28T19:39:03&#43;08:00" />
+<meta itemprop="wordCount" content="499">
+<meta itemprop="keywords" content="存储器," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="计算机原理-存储"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">软件开发</h1>
+      <h1 class="post-title">计算机原理-存储</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-04-05 </span>
+        <span class="post-time"> 2021-04-28 </span>
         <div class="post-category">
-            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AE%A4%E7%9F%A5/"> 编程认知 </a>
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
             </div>
-          <span class="more-meta"> 约 670 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 499 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
     </header>
@@ -147,66 +147,76 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#理解">理解</a></li>
-    <li><a href="#设计">设计</a></li>
-    <li><a href="#编程">编程</a></li>
-    <li><a href="#软件">软件</a></li>
+    <li><a href="#存储器原理">存储器原理</a>
+      <ul>
+        <li><a href="#ram">RAM</a></li>
+        <li><a href="#ram阵列">RAM阵列</a>
+          <ul>
+            <li><a href="#161ram阵列">16×1RAM阵列</a></li>
+            <li><a href="#82ram阵列">8×2RAM阵列</a></li>
+            <li><a href="#8k8ram阵列">8k×8RAM阵列</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#主存储器">主存储器</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h1 id="理解">理解</h1>
-<blockquote>
-<p>软件开发活动，归根结底考验的就是一个人的理解能力。是否理解自己所要做的产品？ 是否能够理解复杂的概念和系统？ 是否能够理解客户和领导的意图，同伴的想法和建议？ 对于新技术的学习，如果一个人不能理解事物背后的概念，那么，他即使懂得一些新技术的知识技能，也难以深入地掌握和应用。</p>
-</blockquote>
-<h1 id="设计">设计</h1>
-<blockquote>
-<p>设计就是未行而先知。</p>
-<p>系统思考与结构化思考是融合众家武学为我所用的设计内功。</p>
-<p>数据结构与算法、设计模式是增强程序设计内功的秘籍。</p>
-<p>设计要点：</p>
+      <h1 id="存储器原理">存储器原理</h1>
+<h2 id="ram">RAM</h2>
+<p>这种8位锁存器的配置称为<code>RAM</code>，也叫做<code>读/写存储器</code>或<code>随机访问存储器</code>。</p>
+<p><code>8×1RAM</code>可以存储8个单独的1位bit，通过改变3根地址线的输入就可以在8个锁存器的任意一个读出或写入1位bit。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504132933.png" alt="image-20210504132930383" style="zoom:50%;" /></p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133107.png" alt="image-20210504133028008" style="zoom:50%;" /></p>
 <ul>
-<li>
-<p><strong>抽象与分层</strong></p>
-<p>构建合适的抽象与分层，流程与交互会更清晰可读。</p>
-</li>
-<li>
-<p><strong>组件的视角</strong>，</p>
-<p>一切业务逻辑皆可组件化，通过组件构建软件。遵循单一职责及小而美原则，创建可复用的工具和组件，会更容易组合和扩展。</p>
-</li>
-<li>
-<p><strong>防御式编程</strong>，牢记错误无孔不入。一个流程或功能有哪些潜在的错误以及如何处理好，是区分合格程序员与优秀程序员的一大依据。</p>
-</li>
+<li><strong>写入数据（3-8译码器）</strong></li>
 </ul>
-</blockquote>
-<h1 id="编程">编程</h1>
-<blockquote>
-<p>编程是一件很纯粹的事情。组合一系列指令，能完成指定的单个功能模块。前提是必须将模糊不清的细节清晰化，不如此就完成不了作品。</p>
-<p>编程也是一种冥想与表达的过程，一种纯粹的心智活动，甚至不需要计算机，就可编程。不是敲入屏幕的一行行字符，而是淌过心里的一条流，从来处来，去往去处，心思到了，编程也就下笔千言了，这才是编程之美。</p>
-</blockquote>
-<h1 id="软件">软件</h1>
-<blockquote>
-<p>软件是编程与工程的混合体。</p>
-<p>软件开发可以分为两个层次： 组件，以及组件连接的系统全景图。</p>
-<p>组件就是积木，好的积木稳固健壮，有更好的槽口设计，能够更容易地与其他积木组合拼接成多样的形状。</p>
-<p>将组件连接成软件系统更像堆积木，需要工程技术，工程技术关注的是组件之上的系统集成层，要考虑组件之间的良性连接、组合和可维护、可扩展性。</p>
-</blockquote>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133430.png" alt="image-20210504133429405" style="zoom:50%;" /></p>
+<ul>
+<li><strong>读出数据（8-1选择器）</strong></li>
+</ul>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133249.png" alt="image-20210504133248025" style="zoom:50%;" /></p>
+<h2 id="ram阵列">RAM阵列</h2>
+<p>将<code>RAM</code>进行特殊的配置可形成<code>RAM阵列</code>。</p>
+<h3 id="161ram阵列">16×1RAM阵列</h3>
+<p><code>16×1RAM阵列</code>是从2个<code>8×1RAM</code>选择一个进行写入或读出数据，在这里选择输入是第4根地址线。</p>
+<p><code>16×1RAM阵列</code>可以存储16个单独的1位bit。
+$$
+RAM阵列的存储容量=2^{地址线数目}
+$$
+<img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504174702.png" alt="image-20210504174700579" style="zoom:50%;" /></p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504174722.png" alt="image-20210504174721108" style="zoom:50%;" /></p>
+<h3 id="82ram阵列">8×2RAM阵列</h3>
+<p><code>8×2RAM阵列</code>是通过共享地址的方式可以把两个<code>8×1RAM阵列</code>连接起来。</p>
+<p><code>8×2RAM阵列</code>使用相同的地址在2个8×1RAM阵列中存储8组bit，每组有2位bit。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133755.png" alt="image-20210504133753511" style="zoom:50%;" /></p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133814.png" alt="image-20210504133811984" style="zoom:50%;" /></p>
+<h3 id="8k8ram阵列">8k×8RAM阵列</h3>
+<p>地址线并行(共享地址)，数据线一一接上，这8块存储芯片结合起来就组成8K×8位的存储器。</p>
+<p>从一片的1位到8片的8位，这就是主存容量扩展的方式之一：<strong>位扩展</strong>。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-6ef1677a1326a5ae986fe92ec2eef2c5_1440w.jpg" alt="img" style="zoom: 50%;" /></p>
+<h1 id="主存储器">主存储器</h1>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506190225.png" alt="image-20210506190223385" style="zoom:50%;" /></p>
+<ul>
+<li>存储体：存储矩阵。</li>
+<li>MAR（地址寄存器）：存储了要访问的内存单元的地址。</li>
+<li>MDR（数据寄存器）：存储了要进行读写的值，读入还是读出由读写电路决定。</li>
+</ul>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506185926.png" alt="20201214230827361" style="zoom:50%;" /></p>
     </div>
 
     
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AE%A4%E7%9F%A5/">编程认知</a>
+          <a href="/tags/%E5%AD%98%E5%82%A8%E5%99%A8/">存储器</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/c%E8%AF%AD%E8%A8%80-%E6%8C%87%E9%92%88/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">C语言 指针</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/shortcodes/">
-            <span class="next-text nav-default">hugo-Shortcodes</span>
+        
+        <a class="next" href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86-%E5%A4%84%E7%90%86/">
+            <span class="next-text nav-default">计算机原理-处理</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
