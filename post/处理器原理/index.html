@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>处理器原理 - 文文小站</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="一只胖兔" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.83.1 with theme even" />
+
+
+<link rel="canonical" href="https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8%E5%8E%9F%E7%90%86/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b874a8796a492f0d7c86bb24c33cbf052935783a5778ebaf819a8e514bf49f10.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="处理器原理" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8%E5%8E%9F%E7%90%86/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-04T18:10:45&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-04T18:10:45&#43;08:00" />
+
+<meta itemprop="name" content="处理器原理">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-04T18:10:45&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-04T18:10:45&#43;08:00" />
+<meta itemprop="wordCount" content="913">
+<meta itemprop="keywords" content="处理器," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="处理器原理"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文文小站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文文小站</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">处理器原理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-05-04 </span>
+        <div class="post-category">
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
+            </div>
+          <span class="more-meta"> 约 913 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#处理器cpu"><strong>处理器(CPU)</strong></a></li>
+    <li><a href="#芯片soc"><strong>芯片（SOC）</strong></a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="处理器cpu"><strong>处理器(CPU)</strong></h1>
+<hr>
+<p>CPU由运算器、控制器、寄存器组成。</p>
+<p>CPU通过数据总线、地址总线、控制总线与内存进行数据传输与操作。每个CPU都有很多管脚，这些管脚和总线相连。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-c436ad1765cafdda1c9caf4411b97ce7_1440w.jpg" alt="img" style="zoom: 67%;" /></p>
+<ul>
+<li><strong>地址总线</strong></li>
+</ul>
+<p>功能：CPU（MAR地址寄存器）用来寻找内存的地址。</p>
+<p>特点：地址总线的宽度决定了CPU的寻址范围，一根地址总线只能存放一个二进制数。</p>
+<p>32位的操作系统就是有32根地址线，通过共享地址的方式可以寻址$2^{32}$个8bit单位（字节），也就是最多支持4GB的内存空间。</p>
+<p><strong>内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位二进制数/占用4字节），所以32位操作系统的地址编号适合可以用8位十六进制数表示0×00000000.</p>
+<blockquote>
+<p>$CPU寻址范围=2^{地址总线数目}$</p>
+</blockquote>
+<ul>
+<li><strong>数据总线</strong></li>
+</ul>
+<p>功能：CPU与其他器件进行数据传输。</p>
+<p>特点：数据总线的宽度决定了CPU的单次数据传输量。一根数据总线只能存放一个二进制数。因此N根数据总线，一次最多只能传送N位二进制。</p>
+<p>所以在32位CPU中，编程用到的数据类型，如整型，应优先使用int，一个int占4字节，一个字节为8bit，总共32bit，一次完成传输需要32位数据总线。而比int占用更小的数据类型，如short int，在32位CPU中要完成一次传输也是需要32位数据总线。</p>
+<ul>
+<li><strong>控制总线</strong></li>
+</ul>
+<p>功能：例如读写信号控制线。</p>
+<p>特点：控制总线决定了CPU对系统中其他器件的控制能力。</p>
+<h1 id="芯片soc"><strong>芯片（SOC）</strong></h1>
+<hr>
+<p>芯片主要构成：内存(ddr)，CPU（寄存器+运算器+控制器），Flash，串口。</p>
+<p>其中<strong>Flash</strong>是存放程序和数据，<strong>内存</strong>是程序的运行。CPU中的寄存器作为临时搬运工。CPU向Flash提出命令， 然后通过地址总线找到该处地址，在通过数据总线将该数据传输到CPU的<strong>寄存器</strong>中。后通过数据总线传送到<strong>内存</strong>中运行。</p>
+<p><strong>嵌入式系统上电后，硬件的启动流程：</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/2020041611281824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NoZW5HdWlHYW4=,size_16,color_FFFFFF,t_70" alt="img" style="zoom: 50%;" /></p>
+<p>程序首先躺在flash里面（以二进制码的形式存在FLASH中），分为3个段，代码段、数据段，bss段;</p>
+<p>上电后，CPU通过控制器将待运行的程序从FLASH中读入内存中；</p>
+<p>代码在内存中运行时，控制器将需要计算的数据存入寄存器中；</p>
+<p>运算器从寄存器中读取数据进行运算，并将结果存入寄存器中；</p>
+<p>控制器将寄存器中的结果读入内存中；</p>
+<p>形成一个闭环的程序运行过程。</p>
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/">处理器</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%98%E5%82%A8%E5%99%A8%E5%8E%9F%E7%90%86/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">存储器原理</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
+            <span class="next-text nav-default">通信原理</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="jangqi/utterances"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:jangqi@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/jangqi" class="iconfont icon-github" title="github"></a>
+  <a href="https://jangqi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>一只胖兔</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
