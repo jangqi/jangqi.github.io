@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 文文小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 May 2021 17:01:47 +0800</lastBuildDate><atom:link href="https://jangqi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 May 2021 20:47:55 +0800</lastBuildDate><atom:link href="https://jangqi.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编程语言</title>
+      <link>https://jangqi.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 05 May 2021 20:47:55 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>编码</title>
       <link>https://jangqi.github.io/categories/%E7%BC%96%E7%A0%81/</link>
@@ -22,15 +31,6 @@
       <pubDate>Tue, 04 May 2021 21:27:22 +0800</pubDate>
       
       <guid>https://jangqi.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>编程语言</title>
-      <link>https://jangqi.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Mon, 05 Apr 2021 18:45:49 +0800</pubDate>
-      
-      <guid>https://jangqi.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
     </item>
     
