@@ -49,7 +49,7 @@
 <meta itemprop="name" content="编码">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-05T17:01:47&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-05T17:01:47&#43;08:00" />
-<meta itemprop="wordCount" content="1619">
+<meta itemprop="wordCount" content="2483">
 <meta itemprop="keywords" content="编码," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="编码"/>
 <meta name="twitter:description" content=""/>
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
             </div>
-          <span class="more-meta"> 约 1619 字 </span>
-          <span class="more-meta"> 预计阅读 4 分钟 </span>
+          <span class="more-meta"> 约 2483 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
         
       </div>
     </header>
@@ -151,20 +151,24 @@
       <ul>
         <li><a href="#位bit"><strong>位（bit）</strong></a></li>
         <li><a href="#字节type"><strong>字节（type）</strong></a></li>
+        <li><a href="#十六进制hex"><strong>十六进制(HEX)</strong></a></li>
         <li><a href="#内存地址"><strong>内存地址</strong></a></li>
-        <li><a href="#十六进制"><strong>十六进制</strong></a></li>
+        <li><a href="#数据类型">数据类型</a></li>
+        <li><a href="#常量变量"><strong>常量/变量</strong></a></li>
+        <li><a href="#指针"><strong>指针</strong></a></li>
       </ul>
     </li>
     <li><a href="#原子控制"><strong>原子控制</strong></a>
       <ul>
-        <li><a href="#c按位运算符">c按位运算符</a>
+        <li><a href="#位运算"><strong>位运算</strong></a>
           <ul>
-            <li><a href="#按位逻辑运算符">按位逻辑运算符</a></li>
-            <li><a href="#按位逻辑运算符的用法">按位逻辑运算符的用法</a></li>
-            <li><a href="#移位运算符">移位运算符</a></li>
-            <li><a href="#移位运算符用法">移位运算符用法</a></li>
+            <li><a href="#按位逻辑运算符"><strong>按位逻辑运算符</strong></a></li>
+            <li><a href="#按位逻辑运算符的用法"><strong>按位逻辑运算符的用法</strong></a></li>
+            <li><a href="#移位运算符"><strong>移位运算符</strong></a></li>
+            <li><a href="#移位运算符的用法"><strong>移位运算符的用法</strong></a></li>
           </ul>
         </li>
+        <li><a href="#内存拷贝"><strong>内存拷贝</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -185,64 +189,121 @@
 <p>因为硬件是通过地址总线访问内存的，地址总线通过共享地址可以访问8bit，即1字节，所以操作系统在管理内存时，是以字节为基本单位。</p>
 <p>那如何控制它的某一位呢？那就需要通过“位运算符”，即通过软件的方式来控制。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506141207.png" alt="未命名文件(10)" style="zoom: 50%;" /></p>
-<h2 id="内存地址"><strong>内存地址</strong></h2>
-<p>内存以字节为存储单位进行编址。一个内存地址代表一个字节（8bit）的存储空间。</p>
-<p>32位的操作系统（有32根地址线），通过共享地址的方式可以寻址$2^{32}$个8bit单位（字节），也就是最多支持4GB的内存空间。</p>
-<p><strong>内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位二进制数），所以32位操作系统的地址编号占用4字节，适合可以用8位十六进制数表示0×00000000.</p>
-<p>内存中存储数据的方式是：一个数据存储的“实际地址”=段首地址+偏移量（类型决定偏移量）。</p>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506192636.png" alt="未命名文件(10)" style="zoom:80%;" /></p>
-<h2 id="十六进制"><strong>十六进制</strong></h2>
+<h2 id="十六进制hex"><strong>十六进制(HEX)</strong></h2>
 <p><strong>十六进制计数法</strong>：0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f表示个位，其中a,b,c,d,e,f分别表示十进制中的10,11,12,13,14,15。</p>
-<p>在十六进制小于十六的都是用一位来表示，当数等于16的时候就要进位了，变成了10，我们为了和十进制区别，在10前面加0x10,表示这个数是用16进制表示的，那么0x10由于是逢16进1，所以0x10表示是16（十进制）。
+<p><strong>十六进制数表示法</strong>：0x是16进制的前缀，H是16进制的后缀，都是表示十六进制数。</p>
+<p>在十六进制小于十六的都是用一位来表示，当数等于16的时候就要进位了，变成了10，我们为了和十进制区别，在10前面加0x10,表示这个数是用16进制表示的，那么0x10由于是逢16进1，所以0x10表示是16（十进制）。</p>
+<p><strong>十六进制转十进制：</strong>
 $$
 0×A3F（十六进制） = 10×16^2+3×16^2+15×16^0 = 2623(十进制)
-$$
-<strong>十六进制数表示法</strong>：0x是16进制的前缀，H是16进制的后缀，都是表示十六进制数。</p>
-<p><strong>十六进制数表示字节值</strong>：每个十六进制位都对应一个4位的二进制数，两位十六进制数恰好对于一个8位字节，第一个十六进制位表示前4位，第二个十六进制位表示后四位。因此，2位十六进制数很适合表示字节值。
+$$</p>
+<p><strong>十六进制转二进制：</strong></p>
+<p>每个十六进制位都对应一个4位的二进制数，两位十六进制数恰好对于一个8位(bit)字节，第一个十六进制位表示前四位，第二个十六进制位表示后四位。因此，<strong>两位十六进制数很适合表示一个字节值。</strong>
 $$
 0×C2（十六进制）=11000010（二进制）
 $$</p>
+<h2 id="内存地址"><strong>内存地址</strong></h2>
+<p>内存以字节为基本单位进行编址。一个内存地址代表一个字节（8bit）的存储空间。</p>
+<p>32位的操作系统（有32根地址线），通过共享地址的方式可以寻址$2^{32}$个8bit单位（字节），也就是最多支持4GB的内存空间。</p>
+<p><strong>其内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位bit），所以32位操作系统的地址编号占用4字节，适合用8位十六进制数表示0×00000000地址编号。</p>
+<h2 id="数据类型">数据类型</h2>
+<ul>
+<li>
+<p><strong>字符char</strong></p>
+<p>单个字母和数字都是占一个字节的8位bit编码表示，通过ASCII 码表来进行映射。比如A，ASCII码值是65，对应的01串是 01000001。</p>
+</li>
+<li>
+<p><strong>整数int</strong></p>
+<p>整数一般是占4个字节的32位bit编码表示，还有长整数是占8个字节的64位bit编码表示。</p>
+<p>整数10000 可以表示为 00000000 00000000 00100111 00010000。</p>
+</li>
+</ul>
+<h2 id="常量变量"><strong>常量/变量</strong></h2>
+<p>c语言只管找地址，常量/变量名都是内存地址的助记符，类型决定地址的延续长度。</p>
+<p>内存中存储数据的方式是：一个数据存储的“实际地址”=首地址+延续长度。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506192636.png" alt="未命名文件(10)" style="zoom:80%;" /></p>
+<h2 id="指针"><strong>指针</strong></h2>
+<p>指针变量存储地址，指针变量的类型决定访问地址的延续长度。</p>
+<p>c语言只管找地址，指针提供地址的算数运算，凭借C语言华丽的指针技法可以戳边内存。</p>
 <h1 id="原子控制"><strong>原子控制</strong></h1>
 <hr>
+<p>别看计算机能胜任超级广泛的任务，其实它只会两件事：拷贝与位运算。</p>
+<p>拷贝：就是将一个值从一处存储位置挪到另一处存储位置。</p>
+<p>位运算：二进制数按位进行算数运算和逻辑运算。</p>
+<h2 id="位运算"><strong>位运算</strong></h2>
 <p>在c语言中，还可以在为汇编语言所保留的级别上，单独操控变量的<strong>位(bit)</strong>。</p>
-<p>单独操作位(bit)是必要的，例如，通常向硬件设备发送一两个字节来控制这些设备，其中每个**位(bit)**都有特定的含义。</p>
-<h2 id="c按位运算符">c按位运算符</h2>
-<p>c提供<strong>按位逻辑运算符</strong>和<strong>移位运算符</strong>，方便了解位操作可以用二进制数，但在实际程序程序中，一般用整型变量或常量。例如在程序中用25（十进制）或0×16（十六进制）而不是00011001（二进制）。</p>
-<h3 id="按位逻辑运算符">按位逻辑运算符</h3>
+<p>单独操作位(bit)是必要的，例如，通常向硬件设备发送一两个字节来控制这些设备，其中每个位(bit)都有特定的含义。</p>
+<p>c语言提供<strong>按位逻辑运算符</strong>和<strong>移位运算符</strong>，为方便理解位操作可以用二进制数，但在实际程序程序中，一般用25（十进制）或0×16（十六进制）而不是00011001（二进制）的整形常量或变量。</p>
+<h3 id="按位逻辑运算符"><strong>按位逻辑运算符</strong></h3>
 <ul>
-<li><strong>按位取反（二进制反码）：~</strong></li>
-</ul>
+<li>
+<p><strong>按位取反（二进制反码）：~</strong></p>
 <p>~运算符把1变为0，把0变为1。</p>
-<p>~（10011010）//表达式</p>
-<p>01100101//结果值</p>
-<ul>
-<li><strong>按位与：&amp;</strong></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="o">~</span><span class="err">（</span><span class="mi">10011010</span><span class="err">）</span> <span class="cm">/*表达式*/</span>
+
+  <span class="mo">01100101</span>   <span class="cm">/*结果值*/</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>按位与：&amp;</strong></p>
+<p>逐位比较，1 and 1 = 1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="err">（</span><span class="mi">10010011</span><span class="err">）</span><span class="o">&amp;</span><span class="err">（</span><span class="mo">00111101</span><span class="err">）</span><span class="cm">/*表达式*/</span>
+
+<span class="err">（</span><span class="mo">00010001</span><span class="err">）</span><span class="cm">/*结果值*/</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>按位或：|</strong></p>
+<p>逐位比较，0 or 1 = 1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="err">（</span><span class="mi">10010011</span><span class="err">）</span><span class="o">&amp;</span><span class="err">（</span><span class="mo">00111101</span><span class="err">）</span><span class="c1">//表达式
+</span><span class="c1"></span>
+<span class="err">（</span><span class="mi">10111111</span><span class="err">）</span><span class="c1">//结果值
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>按位异或：^</strong></p>
+<p>逐位比较，1 xor 1=  0，1 xor 0 = 0，0 xor 0 =1</p>
+</li>
 </ul>
-<p>逐位比较，1和1为1。</p>
-<p>（10010011）&amp;（00111101）//表达式</p>
-<p>（00010001）//结果值</p>
+<h3 id="按位逻辑运算符的用法"><strong>按位逻辑运算符的用法</strong></h3>
 <ul>
-<li><strong>按位或：|</strong></li>
-</ul>
-<p>（10010011）&amp;（00111101）//表达式</p>
-<p>（10111111）//结果值</p>
-<ul>
-<li><strong>按位异或：^</strong></li>
-</ul>
-<p>逐位比较，1和1为0，1和0为1，0和0为1。</p>
-<h3 id="按位逻辑运算符的用法">按位逻辑运算符的用法</h3>
-<ul>
-<li><strong>掩码</strong></li>
-</ul>
+<li>
+<p><strong>掩码</strong></p>
 <p>一串二进制数（0屏蔽，1透明），通过与目标数字“<strong>按位与&amp;</strong>”，达到屏蔽目标数字其他位的目的。</p>
-<ul>
-<li><strong>设置位</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>设置位</strong></p>
 <p>一串二进制数（0不变，1设置为1），通过与目标数字“<strong>按位或|</strong>”，达到设置目标数字指定位为1的目的。</p>
-<ul>
-<li><strong>检查位</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>检查位</strong></p>
 <p>先使用掩码屏蔽目标数字其他位（其他位&amp;0为0），在用掩码后的结果（显示指定位）和掩码判断是否相等。</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -251,17 +312,181 @@ $$</p>
 <pre class="chroma"><code class="language-c" data-lang="c"><span class="k">if</span><span class="p">((</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">MASK</span><span class="p">)</span> <span class="o">==</span> <span class="n">MASK</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="移位运算符">移位运算符</h3>
+</div><h3 id="移位运算符"><strong>移位运算符</strong></h3>
 <ul>
-<li><strong>左移：&laquo;</strong></li>
-</ul>
+<li>
+<p><strong>左移：&laquo;</strong></p>
 <p>移除左端位，右端补0.</p>
-<ul>
-<li><strong>右移：&raquo;</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>右移：&raquo;</strong></p>
 <p>移除右端位，左端补0.</p>
-<h3 id="移位运算符用法">移位运算符用法</h3>
+</li>
+</ul>
+<h3 id="移位运算符的用法"><strong>移位运算符的用法</strong></h3>
 <p>用于从大的单元中取一些指定位。先移位，后掩码。</p>
+<h2 id="内存拷贝"><strong>内存拷贝</strong></h2>
+<p>把源内存地址区的数据（若干字节）拷贝到目标内存地址区。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210508224806.png" alt="未命名文件(9)(2)" style="zoom:67%;" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/*
+</span><span class="cm"> 如果目标内存区与源内存区无重叠,
+</span><span class="cm"> 或虽然有重叠，但目标内存区的起始地址≤源内存地址区的起始地址，
+</span><span class="cm"> 可以按从源内存区的低地址开始拷贝。
+</span><span class="cm">*/</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">Dst</span> <span class="o">&lt;=</span> <span class="n">Src</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">Dst</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">Src</span> <span class="o">+</span> <span class="n">len</span><span class="p">))</span>
+<span class="p">{</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">len</span><span class="err">＞</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+    	<span class="o">*</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">Dst</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">Drc</span><span class="p">;</span>
+         <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">Dst</span><span class="o">++</span><span class="p">;</span>
+         <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">Src</span><span class="o">++</span><span class="p">;</span> 
+        <span class="n">len</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210508222724.png" alt="未命名文件(9)(1)" style="zoom: 67%;" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/*
+</span><span class="cm"> 如果目标内存区的起始地址＞源内存区的起始地址，
+</span><span class="cm"> 且目标内存区的起始地址＜源内存区的终止地址时，
+</span><span class="cm"> 需要从源内存区的高地址开始拷贝，保留目标内存区。
+</span><span class="cm">*/</span>
+<span class="k">if</span><span class="p">((</span><span class="n">Dst</span> <span class="o">&gt;</span> <span class="n">Src</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">Dst</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">v_Src</span> <span class="o">+</span> <span class="n">Len</span><span class="p">)))</span>
+    <span class="p">{</span>
+		<span class="kt">char</span><span class="o">*</span> <span class="n">v_Dst</span> <span class="o">=</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">Dst</span><span class="p">;</span>
+        <span class="kt">char</span><span class="o">*</span> <span class="n">v_Src</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">Src</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">Len</span> <span class="o">&gt;</span> <span class="mi">0L</span><span class="p">)</span>
+        <span class="p">{</span>
+             <span class="n">v_Dst</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_Src</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+             <span class="n">v_Index</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>内存拷贝函数</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span>  <span class="n">UINT8</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span>  <span class="kt">int</span> <span class="n">UINT32</span>
+
+<span class="n">UINT32</span> <span class="nf">Serve_Mem_Cpy</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="k">const</span> <span class="n">out_Dst</span><span class="p">,</span>
+                                        <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="k">const</span> <span class="n">in_Src</span><span class="p">,</span>
+                                        <span class="k">const</span> <span class="n">UINT32</span> <span class="n">in_Len</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span> <span class="n">v_Src</span> <span class="o">=</span> <span class="p">(</span><span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span><span class="p">)</span><span class="n">in_Src</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span> <span class="n">v_Dst</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span><span class="p">)</span><span class="n">out_Dst</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">v_Index</span> <span class="o">=</span> <span class="n">in_Len</span><span class="p">;</span>
+    
+    <span class="cm">/*常量与变量作“==”条件判断时把常量写在前面，编译检查时是“=”会报错*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span><span class="o">==</span><span class="n">out_Dst</span> <span class="o">||</span> <span class="nb">NULL</span> <span class="o">==</span><span class="n">in_Src</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0UL</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/*如果源数据区与目标数据区有重叠 =&gt; 保全目标数据区*/</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">((</span><span class="n">v_Dst</span> <span class="o">&gt;</span> <span class="n">v_Src</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">v_Dst</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">v_Src</span> <span class="o">+</span> <span class="n">in_Len</span><span class="p">)))</span>
+    <span class="p">{</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">v_Index</span> <span class="o">&gt;</span> <span class="mi">0L</span><span class="p">)</span>
+        <span class="p">{</span>
+             <span class="n">v_Dst</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_Src</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+             <span class="n">v_Index</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+   
+    <span class="cm">/*源数据区与目标数据区无重叠*/</span>
+    <span class="cm">/*有重叠，但源数据区的起始地址＜目标数据区起始地址*/</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+    	<span class="n">v_Index</span> <span class="o">=</span><span class="mi">0L</span><span class="p">;</span>
+    	<span class="k">while</span><span class="p">(</span><span class="n">v_Index</span> <span class="o">&lt;</span> <span class="n">in_Len</span><span class="p">)</span>
+    	<span class="p">{</span>
+    	    <span class="n">v_Dst</span><span class="p">[</span><span class="n">v_Index</span><span class="p">]</span> <span class="o">=</span> <span class="n">v_Src</span><span class="p">[</span><span class="n">v_Index</span><span class="p">];</span>
+    	    <span class="n">v_Index</span><span class="o">++</span><span class="p">;</span>
+    	<span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">in_Len</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
