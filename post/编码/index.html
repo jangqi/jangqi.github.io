@@ -49,7 +49,7 @@
 <meta itemprop="name" content="编码">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-05T17:01:47&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-05T17:01:47&#43;08:00" />
-<meta itemprop="wordCount" content="2483">
+<meta itemprop="wordCount" content="2583">
 <meta itemprop="keywords" content="编码," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="编码"/>
 <meta name="twitter:description" content=""/>
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
             </div>
-          <span class="more-meta"> 约 2483 字 </span>
-          <span class="more-meta"> 预计阅读 5 分钟 </span>
+          <span class="more-meta"> 约 2583 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
     </header>
@@ -153,7 +153,7 @@
         <li><a href="#字节type"><strong>字节（type）</strong></a></li>
         <li><a href="#十六进制hex"><strong>十六进制(HEX)</strong></a></li>
         <li><a href="#内存地址"><strong>内存地址</strong></a></li>
-        <li><a href="#数据类型"><strong>数据类型</strong></a></li>
+        <li><a href="#值和类型"><strong>值和类型</strong></a></li>
         <li><a href="#常量变量"><strong>常量/变量</strong></a></li>
         <li><a href="#指针"><strong>指针</strong></a></li>
       </ul>
@@ -163,7 +163,6 @@
         <li><a href="#位运算"><strong>位运算</strong></a>
           <ul>
             <li><a href="#按位逻辑运算符"><strong>按位逻辑运算符</strong></a></li>
-            <li><a href="#按位逻辑运算符的用法"><strong>按位逻辑运算符的用法</strong></a></li>
             <li><a href="#移位运算符"><strong>移位运算符</strong></a></li>
             <li><a href="#移位运算符的用法"><strong>移位运算符的用法</strong></a></li>
           </ul>
@@ -180,13 +179,13 @@
 <h1 id="原子数据"><strong>原子数据</strong></h1>
 <hr>
 <h2 id="位bit"><strong>位（bit）</strong></h2>
-<p>位(bit) 是内存中存储数据的最小单位。一位(bit)存放一个二进制数“0”或“1”。</p>
+<p>位(bit) 是内存中存储的最小单位。一位(bit)存放一个二进制数“0”或“1”。</p>
 <p>计算机能传输的最小单位也是位(bit)，而不是字节，串口最小也有一位传递的。另外数字信息流的基本单位是bit。</p>
 <h2 id="字节type"><strong>字节（type）</strong></h2>
-<p>字节(byte)是内存中存储数据的基本单位。并且是硬件所能访问的最小单位。</p>
+<p>字节(byte)是内存中存储的基本单位。并且是硬件访问内存的最小单位。</p>
 <p>一个字节由8个二进制位（bit）构成。编号D7的位是“高阶位”，编号D0的位是“低阶位“。</p>
-<p>为什么硬件所能访问的最小单位是字节，而不是位呢？</p>
-<p>因为硬件是通过地址总线访问内存的，地址总线通过共享地址可以访问8bit，即1字节，所以操作系统在管理内存时，是以字节为基本单位。</p>
+<p>为什么硬件访问内存的最小单位是字节，而不是位呢？</p>
+<p>因为硬件是通过地址总线访问内存的，地址总线通过共享地址可以访问8bit单位，即1字节，所以操作系统在管理内存时，是以字节为基本单位。</p>
 <p>那如何控制它的某一位呢？那就需要通过“位运算符”，即通过软件的方式来控制。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506141207.png" alt="未命名文件(10)" style="zoom: 50%;" /></p>
 <h2 id="十六进制hex"><strong>十六进制(HEX)</strong></h2>
@@ -203,14 +202,19 @@ $$
 0×C2（十六进制）=11000010（二进制）
 $$</p>
 <h2 id="内存地址"><strong>内存地址</strong></h2>
-<p>内存以字节为基本单位进行编址。一个内存地址代表一个字节（8bit）的存储空间。</p>
-<p>32位的操作系统（有32根地址线），通过共享地址的方式可以寻址$2^{32}$个8bit单位（字节），也就是最多支持4GB的内存空间。</p>
-<p><strong>其内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位bit），所以32位操作系统的地址编号占用4字节，适合用8位十六进制数表示0×00000000地址编号。</p>
-<h2 id="数据类型"><strong>数据类型</strong></h2>
+<p>内存以字节为单位进行编址。一个内存地址代表一个字节（8bit）的存储空间。</p>
+<p>32位的操作系统（有32根地址线），通过共享地址的方式可以寻址$2^{32}$个8bit单位（1字节）.</p>
+<p><strong>其内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位bit），所以32位操作系统的地址编号占4字节，适合用8位十六进制数表示。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210510142110.png" alt="未命名文件(10)"></p>
+<h2 id="值和类型"><strong>值和类型</strong></h2>
+<p>内存中一串32位(bit)的0或1，可以表示一个int32的整数，或两个int16的整数，或四个字符。</p>
+<p>类型决定数据存储的地址长度，和解析的数值。</p>
+<p>内存中存储数据的方式是：一个数据存储的“实际地址”=首地址+延续长度。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506192636.png" alt="未命名文件(10)" style="zoom:80%;" /></p>
 <ul>
 <li>
 <p><strong>字符char</strong></p>
-<p>单个字母和数字都是占一个字节的8位bit编码表示，通过ASCII 码表来进行映射。比如A，ASCII码值是65，对应的01串是 01000001。</p>
+<p>单个字母和数字都是占1个字节的8位bit编码表示，通过ASCII 码表来进行映射。比如A，ASCII码值是65，对应的01串是 01000001。</p>
 </li>
 <li>
 <p><strong>整数int</strong></p>
@@ -219,19 +223,19 @@ $$</p>
 </li>
 </ul>
 <h2 id="常量变量"><strong>常量/变量</strong></h2>
-<p>c语言只管找地址，常量/变量名都是内存地址的助记符，类型决定地址的延续长度。</p>
-<p>内存中存储数据的方式是：一个数据存储的“实际地址”=首地址+延续长度。</p>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506192636.png" alt="未命名文件(10)" style="zoom:80%;" /></p>
+<p><strong>程序运行的实质就是访问内存，c语言只管找地址。</strong></p>
+<p>常量/变量名都是内存地址的助记符，类型决定访问地址的延续长度。</p>
+<p>高级语言的特性之一就是用名字而不是地址来访问内存位置，编译器实现名字与内存地址的关联，但硬件仍然通过地址访问内存。</p>
 <h2 id="指针"><strong>指针</strong></h2>
-<p>指针变量存储地址，指针变量的类型决定访问地址的延续长度。</p>
-<p>c语言只管找地址，指针提供地址的算数运算，凭借C语言华丽的指针技法可以戳边内存。</p>
+<p>指针变量存储的是内存地址，指针变量的类型决定访问内存地址的延续长度。</p>
+<p>指针提供地址的算数运算，凭借C语言的指针可以戳边内存。</p>
 <h1 id="原子控制"><strong>原子控制</strong></h1>
 <hr>
-<p>别看计算机能胜任超级广泛的任务，其实它只会两件事：拷贝与位运算。</p>
-<p>拷贝：就是将一个值从一处存储位置挪到另一处存储位置。</p>
-<p>位运算：二进制数按位进行算数运算和逻辑运算。</p>
+<p>别看计算机能胜任超级广泛的任务，其实它只会两件事：拷贝和位运算。</p>
+<p><strong>拷贝</strong>：就是将一个值从一处存储位置挪到另一处存储位置。</p>
+<p><strong>位运算</strong>：二进制数按位进行算数运算和逻辑运算。</p>
 <h2 id="位运算"><strong>位运算</strong></h2>
-<p>在c语言中，还可以在为汇编语言所保留的级别上，单独操控变量的<strong>位(bit)</strong>。</p>
+<p>在c语言中，还可以在为汇编语言所保留的级别上，按位(bit)操作。</p>
 <p>单独操作位(bit)是必要的，例如，通常向硬件设备发送一两个字节来控制这些设备，其中每个位(bit)都有特定的含义。</p>
 <p>c语言提供<strong>按位逻辑运算符</strong>和<strong>移位运算符</strong>，为方便理解位操作可以用二进制数，但在实际程序程序中，一般用25（十进制）或0×16（十六进制）而不是00011001（二进制）的整形常量或变量。</p>
 <h3 id="按位逻辑运算符"><strong>按位逻辑运算符</strong></h3>
@@ -286,10 +290,10 @@ $$</p>
 </div></li>
 <li>
 <p><strong>按位异或：^</strong></p>
-<p>逐位比较，1 xor 1=  0，1 xor 0 = 0，0 xor 0 =1</p>
+<p>逐位比较，1 xor 1=  0，1 xor 0 = 1，0 xor 0 =0</p>
 </li>
 </ul>
-<h3 id="按位逻辑运算符的用法"><strong>按位逻辑运算符的用法</strong></h3>
+<p><strong>按位逻辑运算符的用法</strong></p>
 <ul>
 <li>
 <p><strong>掩码</strong></p>
@@ -449,11 +453,11 @@ $$</p>
 <span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span>  <span class="kt">int</span> <span class="n">UINT32</span>
 
 <span class="n">UINT32</span> <span class="nf">Serve_Mem_Cpy</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="k">const</span> <span class="n">out_Dst</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="k">const</span> <span class="n">in_Src</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="n">UINT32</span> <span class="n">in_Len</span><span class="p">)</span>
+                     <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="k">const</span> <span class="n">in_Src</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">UINT32</span> <span class="n">in_Len</span><span class="p">)</span>
 <span class="p">{</span>
-	<span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span> <span class="n">v_Src</span> <span class="o">=</span> <span class="p">(</span><span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span><span class="p">)</span><span class="n">in_Src</span><span class="p">;</span>
-    <span class="k">const</span> <span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span> <span class="n">v_Dst</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span><span class="p">)</span><span class="n">out_Dst</span><span class="p">;</span>
+	 <span class="k">const</span> <span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span> <span class="n">v_Src</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span><span class="p">)</span><span class="n">in_Src</span><span class="p">;</span>
+    <span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span> <span class="n">v_Dst</span> <span class="o">=</span> <span class="p">(</span><span class="n">UINT8</span><span class="o">*</span> <span class="k">const</span><span class="p">)</span><span class="n">out_Dst</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">v_Index</span> <span class="o">=</span> <span class="n">in_Len</span><span class="p">;</span>
     
     <span class="cm">/*常量与变量作“==”条件判断时把常量写在前面，编译检查时是“=”会报错*/</span>
