@@ -49,7 +49,7 @@
 <meta itemprop="name" content="编码">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-05T17:01:47&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-05T17:01:47&#43;08:00" />
-<meta itemprop="wordCount" content="2643">
+<meta itemprop="wordCount" content="2635">
 <meta itemprop="keywords" content="编码," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="编码"/>
 <meta name="twitter:description" content=""/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"> 编程语言 </a>
             </div>
-          <span class="more-meta"> 约 2643 字 </span>
+          <span class="more-meta"> 约 2635 字 </span>
           <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
@@ -206,30 +206,27 @@ $$</p>
 <p>32位的操作系统（有32根地址线），<strong>内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位bit），占4字节，适合用8位十六进制数表示。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210510142110.png" alt="未命名文件(10)"></p>
 <h2 id="基本数据类型"><strong>基本数据类型</strong></h2>
-<p>内存中一串32位(bit)的0或1，可以表示一个int32的整数，或两个int16的整数，或四个字符。</p>
-<p>类型决定数据存储的占用内存地址的长度（占用多少个字节），和表示的数值。</p>
-<p>内存中存储数据的方式是：一个数据存储的“实际地址”=首地址+延续长度。</p>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506192636.png" alt="未命名文件(10)" style="zoom:80%;" /></p>
-<ul>
-<li>
 <p><strong>字符char</strong></p>
 <p>单个字母和数字都是占1个字节的8位bit编码表示，通过ASCII 码表来进行映射。比如A，ASCII码值是65，对应的01串是 01000001。</p>
-</li>
-<li>
 <p><strong>整数int</strong></p>
 <p>整数一般是占4个字节的32位bit编码表示，还有长整数是占8个字节的64位bit编码表示。</p>
-<p>整数10000 可以表示为 00000000 00000000 00100111 00010000。</p>
-</li>
-</ul>
+<blockquote>
+<p>内存中一串32位(bit)的0或1，可以表示一个int32的整数，或两个int16的整数，或四个字符。</p>
+<p>类型决定数据存储的占用内存地址的长度（占用多少个字节）。</p>
+<p>内存中存储数据的方式是：一个数据存储的“实际地址”=首地址+延续长度。</p>
+</blockquote>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506192636.png" alt="未命名文件(10)" style="zoom:80%;" /></p>
 <h2 id="常量变量"><strong>常量/变量</strong></h2>
-<p><strong>c语言只管找地址</strong>，高级语言的特性之一就是用名字而不是地址来访问内存位置，</p>
-<p>常量/变量名都是内存地址的助记符，数据类型决定访问地址的延续长度（占用多少个字节）。</p>
+<p><strong>程序运行的实质时访问内存，c语言只管找地址</strong>，</p>
+<p>高级语言的特性之一就是用名字而不是地址来访问内存位置，</p>
+<p>常量/变量名都是内存地址的助记符，数据类型决定访问地址的延续长度（访问多少个字节）。</p>
 <p>虽然编译器实现了名字与内存地址的关联，但硬件仍然通过地址访问内存。</p>
 <h2 id="指针"><strong>指针</strong></h2>
-<p><strong>地址</strong>是常量，<strong>指针</strong>是变量。</p>
+<p><strong>地址</strong>是常量，</p>
 <p>“&amp;运算符”取的是变量的首地址是一个地址常量，地址常量不能做左值进行赋值，地址常量的算数运算也没有意义。</p>
-<p>指针变量存储的是地址编号，指针变量指向的类型决定“*解引用地址”时的延续长度（访问多少个字节）。</p>
-<p>指针操作提供了有意义的地址的算数运算，凭借C语言的指针可以戳边内存。</p>
+<p><strong>指针</strong>是变量，</p>
+<p>指针变量存储的是地址编号，指针指向的类型决定&quot;*解引用&quot;指针时访问地址的延续长度（访问多少个字节）。</p>
+<p>指针提供了有意义的地址的算数运算，凭借C语言的指针可以戳边内存。</p>
 <h1 id="原子控制"><strong>原子控制</strong></h1>
 <hr>
 <p>别看计算机能胜任超级广泛的任务，其实它只会两件事：拷贝和位运算。</p>
