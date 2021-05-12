@@ -49,7 +49,7 @@
 <meta itemprop="name" content="编码">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-05-05T17:01:47&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-05T17:01:47&#43;08:00" />
-<meta itemprop="wordCount" content="2635">
+<meta itemprop="wordCount" content="2618">
 <meta itemprop="keywords" content="编码," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="编码"/>
 <meta name="twitter:description" content=""/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"> 编程语言 </a>
             </div>
-          <span class="more-meta"> 约 2635 字 </span>
+          <span class="more-meta"> 约 2618 字 </span>
           <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
@@ -182,8 +182,8 @@
 <p>位(bit) 是内存中存储的最小单位。一位(bit)存放一个二进制数“0”或“1”。</p>
 <p>计算机能传输的最小单位也是位(bit)，而不是字节，串口最小也有一位传递的。另外数字信息流的基本单位是bit。</p>
 <h2 id="字节type"><strong>字节（type）</strong></h2>
+<p>一个字节由8位bit构成，编号D7的位是“高阶位”，编号D0的位是“低阶位“。</p>
 <p>字节(byte)是内存中存储的基本单位。并且是硬件访问内存的最小单位。</p>
-<p>一个字节由8个二进制位（bit）构成。编号D7的位是“高阶位”，编号D0的位是“低阶位“。</p>
 <p>为什么硬件访问内存的最小单位是字节，而不是位呢？</p>
 <p>因为硬件是通过地址总线访问内存的，地址总线通过共享地址可以访问8bit单位，即1字节，所以操作系统在管理内存时，是以字节为基本单位。</p>
 <p>那如何控制它的某一位呢？那就需要通过“位运算符”，即通过软件的方式来控制。</p>
@@ -196,25 +196,29 @@
 $$
 0×A3F（十六进制） = 10×16^2+3×16^2+15×16^0 = 2623(十进制)
 $$</p>
-<p><strong>十六进制转二进制：</strong></p>
-<p>每个十六进制位都对应一个4位的二进制数，两位十六进制数恰好对于一个8位(bit)字节，第一个十六进制位表示前四位，第二个十六进制位表示后四位。因此，<strong>两位十六进制数很适合表示一个字节值。</strong>
+<p><strong>二进制转十六进制：</strong></p>
+<p>每个十六进制位都对应一个两位的二进制数，两位十六进制数恰好对于一个八位(bit)字节，第一个十六进制位表示前四位，第二个十六进制位表示后四位。因此，<strong>两位十六进制数很适合表示一个字节值。</strong>
 $$
 0×C2（十六进制）=11000010（二进制）
 $$</p>
 <h2 id="内存地址"><strong>内存地址</strong></h2>
-<p>内存以字节为单位进行编址。一个地址编号代表一个字节（8bit）的存储空间。</p>
+<p>内存以字节为单位进行编址。一个地址编号代表一个字节的存储空间。</p>
 <p>32位的操作系统（有32根地址线），<strong>内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位bit），占4字节，适合用8位十六进制数表示。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210510142110.png" alt="未命名文件(10)"></p>
 <h2 id="基本数据类型"><strong>基本数据类型</strong></h2>
+<ul>
+<li>
 <p><strong>字符char</strong></p>
 <p>单个字母和数字都是占1个字节的8位bit编码表示，通过ASCII 码表来进行映射。比如A，ASCII码值是65，对应的01串是 01000001。</p>
+</li>
+<li>
 <p><strong>整数int</strong></p>
 <p>整数一般是占4个字节的32位bit编码表示，还有长整数是占8个字节的64位bit编码表示。</p>
-<blockquote>
+</li>
+</ul>
 <p>内存中一串32位(bit)的0或1，可以表示一个int32的整数，或两个int16的整数，或四个字符。</p>
 <p>类型决定数据存储的占用内存地址的长度（占用多少个字节）。</p>
 <p>内存中存储数据的方式是：一个数据存储的“实际地址”=首地址+延续长度。</p>
-</blockquote>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506192636.png" alt="未命名文件(10)" style="zoom:80%;" /></p>
 <h2 id="常量变量"><strong>常量/变量</strong></h2>
 <p><strong>程序运行的实质时访问内存，c语言只管找地址</strong>，</p>
@@ -233,9 +237,9 @@ $$</p>
 <p><strong>拷贝</strong>：就是将一个值从一处内存位置挪到另一处内存位置。</p>
 <p><strong>位运算</strong>：按位(bit)进行二进制数的算数运算和逻辑运算。</p>
 <h2 id="位运算"><strong>位运算</strong></h2>
-<p>在c语言中，还可以在为汇编语言所保留的级别上，按位(bit)操作。</p>
+<p>在c语言中，还可以在为汇编语言所保留的级别上，提供按位(bit)的操作。</p>
 <p>单独操作位(bit)是必要的，例如，通常向硬件设备发送一两个字节来控制这些设备，其中每个位(bit)都有特定的含义。</p>
-<p>c语言提供<strong>按位逻辑运算符</strong>和<strong>移位运算符</strong>，为方便理解位操作可以用二进制数，但在实际程序程序中，一般用25（十进制）或0×16（十六进制）而不是00011001（二进制）的整形常量或变量。</p>
+<p>c语言提供<strong>按位逻辑运算符</strong>和<strong>移位运算符</strong>，为方便理解位操作可以用二进制数，但在实际程序程序中，一般用0×16（十六进制）而不是00011001（二进制）的整形常量或变量。</p>
 <h3 id="按位逻辑运算符"><strong>按位逻辑运算符</strong></h3>
 <ul>
 <li>
