@@ -49,7 +49,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-05-05T20:47:55&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-05T20:47:55&#43;08:00" />
-<meta itemprop="wordCount" content="1075">
+<meta itemprop="wordCount" content="1300">
 
 
 
@@ -139,7 +139,7 @@
         <div class="post-category">
             <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
             </div>
-          <span class="more-meta"> 约 1075 字 </span>
+          <span class="more-meta"> 约 1300 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
@@ -150,11 +150,7 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#指针">指针</a>
-      <ul>
-        <li><a href="#使用指针">使用指针</a></li>
-      </ul>
-    </li>
+    <li><a href="#指针">指针</a></li>
     <li><a href="#const与指针">const与指针</a></li>
     <li><a href="#数组与指针">数组与指针</a>
       <ul>
@@ -174,8 +170,17 @@
 </div>
     <div class="post-content">
       <h1 id="指针">指针</h1>
-<hr>
-<h2 id="使用指针">使用指针</h2>
+<p>程序由变量和函数组成，</p>
+<p>变量是数据；</p>
+<p>函数是数据加工厂；</p>
+<p>相关关系转函数和函数的关系；</p>
+<p>函数的参数是接口，给接口数据，甚至处理数据的</p>
+<p>函数之间是传值（数值 或地址值），地址值要解引用，数值用普通变量来接，地址值用指针变量来接</p>
+<p>被调函数的形参作为被调函数的局部变量处理，会在栈中开辟内存空间以存放由主调函数传递进来的实参值</p>
+<p>函数指针做函数的参数，</p>
+<p>面向过程讲的是层层控制，带指针参数的函数是分层设计中的第三层抽象函数。</p>
+<p>形参指针和实参指针是两个独立的指针</p>
+<p>指针变量  限定只存储地址编号</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -305,7 +310,7 @@
 	<span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
 <span class="p">}</span><span class="n">S_TYPE</span><span class="p">;</span>
 
-<span class="kt">void</span> <span class="nf">F_Struct</span><span class="p">(</span><span class="n">S_TYPE</span><span class="o">*</span> <span class="n">p</span><span class="p">)</span>
+<span class="kt">void</span> <span class="nf">F_Struct</span><span class="p">(</span><span class="n">S_TYPE</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">p</span><span class="o">-&gt;</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/*等效（*p).a*/</span>
     <span class="o">*</span><span class="n">p</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="cm">/*等效p-&gt;a*/</span>
