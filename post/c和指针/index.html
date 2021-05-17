@@ -49,7 +49,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-05-05T20:47:55&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-05T20:47:55&#43;08:00" />
-<meta itemprop="wordCount" content="1300">
+<meta itemprop="wordCount" content="1478">
 
 
 
@@ -139,7 +139,7 @@
         <div class="post-category">
             <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
             </div>
-          <span class="more-meta"> 约 1300 字 </span>
+          <span class="more-meta"> 约 1478 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         
       </div>
@@ -152,16 +152,7 @@
   <ul>
     <li><a href="#指针">指针</a></li>
     <li><a href="#const与指针">const与指针</a></li>
-    <li><a href="#数组与指针">数组与指针</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#数组">数组</a></li>
-          </ul>
-        </li>
-        <li><a href="#数组表示法和指针表示法">数组表示法和指针表示法</a></li>
-      </ul>
-    </li>
+    <li><a href="#数组与指针">数组与指针</a></li>
     <li><a href="#结构体与指针">结构体与指针</a></li>
     <li><a href="#函数与指针">函数与指针</a></li>
   </ul>
@@ -170,17 +161,12 @@
 </div>
     <div class="post-content">
       <h1 id="指针">指针</h1>
-<p>程序由变量和函数组成，</p>
-<p>变量是数据；</p>
-<p>函数是数据加工厂；</p>
-<p>相关关系转函数和函数的关系；</p>
-<p>函数的参数是接口，给接口数据，甚至处理数据的</p>
-<p>函数之间是传值（数值 或地址值），地址值要解引用，数值用普通变量来接，地址值用指针变量来接</p>
-<p>被调函数的形参作为被调函数的局部变量处理，会在栈中开辟内存空间以存放由主调函数传递进来的实参值</p>
-<p>函数指针做函数的参数，</p>
-<p>面向过程讲的是层层控制，带指针参数的函数是分层设计中的第三层抽象函数。</p>
-<p>形参指针和实参指针是两个独立的指针</p>
-<p>指针变量  限定只存储地址编号</p>
+<ul>
+<li>
+<p><strong>指针变量</strong></p>
+<p>指针也是变量，限定存储地址值。</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -199,44 +185,33 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="cm">/** 声明指针*/</span>
-<span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/*指针变量与普通变量一样默认值是随机的，一般初始为 NULL*/</span>
-
-<span class="cm">/** 赋值*/</span> 
-<span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>  <span class="cm">/*int a的地址（首地址）赋给指针变量p*/</span>
-	
-<span class="cm">/** 解引用*/</span>
-<span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="err">；</span> <span class="cm">/*指针变量的类型决定访问内存地址的延续长度*/</span>
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="n">F_Pointer</span><span class="err">（</span><span class="kt">void</span><span class="err">）</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   
+    <span class="cm">/** 声明指针*/</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>              <span class="cm">/* 指针变量(自动存储)未初始化的，默认值是随机的*/</span>
     
-<span class="cm">/** 指针运算*/</span>
-<span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>  <span class="cm">/*从当前地址向后移动2个int单元（8字节）*/</span>
-<span class="n">p</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span>
-<span class="n">p</span><span class="o">++</span><span class="p">;</span>
-<span class="n">p</span><span class="o">--</span><span class="p">;</span>
-
+    <span class="cm">/** 指针赋值*/</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>         <span class="cm">/* int a的首地址赋值给指针变量p*/</span>
+    
+    <span class="cm">/** 解引用指针*/</span>
+    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="err">；</span>         <span class="cm">/*指针变量指向的类型决定访问内存地址的延续长度*/</span>
+   
+    <span class="cm">/** 指针运算*/</span>
+    <span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>               <span class="cm">/*指针与整数相加：从当前地址向后移动2个int单元*/</span>
+    <span class="n">p</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span>                <span class="cm">/*指针与整数相减：从当前地址向前移动2个int单元*/</span>
+    <span class="n">p</span><span class="o">++</span><span class="p">;</span>              <span class="cm">/*递增指针：从当前地址向后移动1个int单元*/</span>
+    <span class="n">p</span><span class="o">--</span><span class="p">;</span>                <span class="cm">/*递减指针：从当前地址向前移动1个int单元*/</span>  
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>双重指针</p>
-<p>解地址</p>
-<blockquote>
-<p><strong>空指针</strong>：值为NULL的指针变量叫空指针，如果进行解引用就会产生段错误。</p>
-<p>NULL也是一种错误标志，如果一个函数返回值是指针类型，当函数执行出错返回值就是NULL。</p>
-<p>当函数的参数是指针，别人传给你的就有可能是空指针。</p>
-<p>从函数获取的返回值也可能是空指针。</p>
-<p>如何避免空指针带来的段错误：使用来历不明的指针前做判断。if(NULL == p)</p>
-<p>注意：NULL在绝大多数系统中是0，在个别系统中是1。</p>
-</blockquote>
-<blockquote>
-<p><strong>野指针</strong>：指向不确定的内存空间。</p>
-<p>如何避免产生野指针：</p>
-<p>1.定义指针变量时一定初始化。</p>
-<p>2.函数不返回栈内存的地址。</p>
-<p>3.指针指向的内存释放后，指针变量要及时置空。</p>
-</blockquote>
-<h1 id="const与指针">const与指针</h1>
+</div><h1 id="const与指针">const与指针</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -244,18 +219,26 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/*指针指向的内存不可修改，指针传参时变量有被修改的风险，这种写法可以保护指针所指向的内存*/</span>
-<span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/*指针变量不可被修改，不能更改指针指向的地址*/</span>
-<span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span> <span class="cm">/*指针即不能更改它所指向的地址，也不能修改指向地址上的值*/</span>
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>             <span class="cm">/** 指针指向地址上的值不能被修改*/</span>
+<span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span>             <span class="cm">/** 指针变量的值不可被修改，不能再指向其他的地址*/</span>
+<span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span>   <span class="cm">/** 指针变量的值不可被修改，也不能修改指向地址上的值*/</span>
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="数组与指针">数组与指针</h1>
-<h3 id="数组">数组</h3>
-<p>从内存角度，数组变量就是一次分配多个变量，而且这些变量的存储地址是依次相连的。</p>
-<p>数组由数据类型相同的一串元素组成。</p>
-<p>在内存中，数组变量就是一次分配多个变量，而且这多个变量在内存中的存储单元是依次相连的。</p>
-<h2 id="数组表示法和指针表示法">数组表示法和指针表示法</h2>
-<p>数组下标方式和指针方式均可以访问数组元素，两者的实质其实是一样的。在编译器内部都是用指针方式来访问数组元素的，数组下标方式只是编译器提供给编程者一种壳（语法糖）而已。用指针方式来访问数组才是本质做法。</p>
+<ul>
+<li>
+<p><strong>数组</strong></p>
+<p>一次定义多个类型相同的变量，并且这些变量的存储地址是依次相连的。</p>
+</li>
+<li>
+<p><strong>数组名</strong></p>
+<p>数组名是一个地址常量，是数组的首元素的地址。</p>
+</li>
+<li>
+<p><strong>数组访问方式</strong></p>
+<p>数组有两种访问方式，数组下标方式只是编译器提供给编程者一种壳（语法糖）而已，实质上在编译器内部都是用指针方式来访问数组元素的。</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -270,25 +253,78 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 数组表示法*/</span>
-<span class="cm">/** 作为函数参数的数组名总是编译器转化为指针*/</span>
-<span class="kt">void</span> <span class="nf">F_Array</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>	<span class="cm">/*int array[]等同于指针int *arr形式*/</span>
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define c_arr_len 5
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">F_Main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
-	<span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>	  <span class="cm">/* arr[1]等同于*(arr+1)*/</span>
+	<span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">c_arr_len</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+	<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">sum</span> <span class="o">=</span> <span class="n">F_Arr</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">c_arr_len</span><span class="p">);</span>  <span class="cm">/*传值调用*/</span>
+	<span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="cm">/** 指针表示法*/</span>
-<span class="kt">void</span> <span class="nf">F_Array_P</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>     <span class="cm">/*指向int类型的指针和偏移量n做形式参数*/</span>
+<span class="cm">/** 函数定义：数组表示法*/</span>
+<span class="kt">void</span> <span class="nf">F_Arr</span><span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> 
 <span class="p">{</span>
-	<span class="o">*</span><span class="p">(</span><span class="n">arr</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>  <span class="cm">/*从内存arr位置，移动1个int单元，对下一个int单元赋值*/</span>
+	<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** 函数定义：指针表示法*/</span>
+<span class="kt">void</span> <span class="nf">F_Array_P</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span>   
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="n">arr</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">sum</span><span class="p">;</span>  
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="结构体与指针">结构体与指针</h1>
-<p>结构体作为函数的参数时，使用结构体指针效率更高。</p>
-<p>指针访问结构成员变量的两种方式：<code>指针-&gt;运算符</code>和<code>(*指针).运算符</code>等效。</p>
+<ul>
+<li>
+<p><strong>结构体</strong></p>
+<p>一次定义一组变量。</p>
+</li>
+<li>
+<p><strong>结构体赋值</strong></p>
+<p>1.定义结构体变量同时可以整体初始化；</p>
+<p>2.定义结构变量之后只能单独给结构成员赋值；</p>
+<p>3.两个结构体类型相同的变量可以相互赋值。</p>
+</li>
+<li>
+<p><strong>结构体指针访问结构成员的两种方式</strong></p>
+<p>“结构体指针-&gt;结构体成员；</p>
+<p>(*结构体指针).结构体成员；</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -302,22 +338,190 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">S_Struct_TYPE</span> <span class="p">{</span>
-	<span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
-	<span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
-	<span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
-<span class="p">}</span><span class="n">S_TYPE</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="nf">F_Struct</span><span class="p">(</span><span class="n">S_TYPE</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 声明结构体类型*/</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">S_Time_TYPE</span>
 <span class="p">{</span>
-    <span class="n">p</span><span class="o">-&gt;</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/*等效（*p).a*/</span>
-    <span class="o">*</span><span class="n">p</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="cm">/*等效p-&gt;a*/</span>
+    <span class="kt">int</span>  <span class="n">Year</span><span class="p">;</span>                        <span class="cm">/** 年*/</span>
+    <span class="kt">int</span>  <span class="n">Month</span><span class="p">;</span>                    <span class="cm">/** 月*/</span>
+    <span class="kt">int</span>  <span class="n">Day</span><span class="p">;</span>                         <span class="cm">/** 日*/</span>
+<span class="p">}</span> <span class="n">S_Time</span><span class="p">;</span>
+
+<span class="cm">/** 函数的返回值可以是结构体类型的值*/</span>
+<span class="n">S_Time</span> <span class="nf">F_Main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/** 定义结构体类型的变量（定义时初始化）*/</span>
+    <span class="n">S_Time</span> <span class="n">S_LCU_Time</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+   
+    <span class="cm">/** 定义结构体类型的变量后，单独赋值*/</span>
+    <span class="n">S_Time</span> <span class="n">S_DMI_Time</span><span class="p">;</span>
+    <span class="n">DMI_Time</span><span class="p">.</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">DMI_Time</span><span class="p">.</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">DMI_Time</span><span class="p">.</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="cm">/** 传结构体的值调用函数*/</span>
+    <span class="n">F_LCU_Time</span><span class="p">(</span><span class="n">S_LCU_Time</span><span class="p">);</span>
+    
+    <span class="cm">/** 传结构的地址值调用函数*/</span>
+    <span class="n">F_DMI_Time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">S_DMI_Time</span><span class="p">);</span>
+    
+    <span class="cm">/** 相同类型的结构体可以互相赋值*/</span>
+    <span class="n">S_DMI_Time</span> <span class="o">=</span> <span class="n">S_LCU_Time</span><span class="p">;</span>
+   
+    <span class="cm">/** 函数可以返回结构体类型的值*/</span>
+    <span class="k">return</span> <span class="n">S_DMI_Time</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** 定义带结构体形参的函数*/</span>    
+<span class="kt">void</span> <span class="nf">F_LCU_Time</span><span class="p">(</span><span class="n">S_Time</span> <span class="n">S_LCU_Time</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">S_LCU_Time</span><span class="p">.</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">2021</span><span class="p">;</span>
+    <span class="n">S_LCU_Time</span><span class="p">.</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">S_LCU_Time</span><span class="p">.</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** 定义带结构体形参的函数*/</span>
+<span class="kt">void</span> <span class="nf">F_DMI_Time</span><span class="p">(</span><span class="n">S_Time</span> <span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">).</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">2021</span>  <span class="cm">/** 等效 S_DMI_Time-&gt;Year = 2021*/</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">).</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="cm">/** 等效 S_DMI_Time-&gt;Month = 11*/</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">).</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>     <span class="cm">/** 等效 S_DMI_Time-&gt;Day = 1*/</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="函数与指针">函数与指针</h1>
+<ul>
+<li>
+<p><strong>函数名</strong></p>
+<p>函数名是一个地址常量，是函数的入口地址。</p>
+</li>
+<li>
+<p><strong>函数指针</strong></p>
+<p>解决问题，若不能依赖于数据结构, 那就得依赖于流程结构（一堆if-else）。</p>
+<p>函数通常使用流程结构来组织，一旦函数可以数据化，就能让数据结构也过来帮忙表达复杂的操作。</p>
+</li>
+<li>
+<p><strong>定义带函数指针形参的函数</strong></p>
+<p>面向过程的是分层控制，带函数指针形参的函数是分层设计中的第三层抽象函数。</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 声明一种指针类型，指向参数是void,返回值是int的函数*/</span>
+<span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Func</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">);</span>
+
+<span class="cm">/** 函数声明*/</span>
+<span class="kt">int</span> <span class="nf">F_Add</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">F_Sub</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+
+
+<span class="kt">int</span> <span class="nf">F_Math</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+   
+    <span class="cm">/** 定义一个函数指针，指向一个参数为(int,int)，返回值为int的函数*/</span>
+    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Add</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">);</span>
+    
+    <span class="cm">/** 函数指针赋值*/</span>
+    <span class="n">p_Add</span> <span class="o">=</span> <span class="n">F_Add</span><span class="err">；</span>
+    
+    <span class="cm">/** 用自定义的函数指针类型定义一个函数指针并初始化*/</span>
+    <span class="n">Func</span> <span class="n">p_Sub</span> <span class="o">=</span> <span class="n">F_Sub</span><span class="p">;</span>
+    
+    <span class="cm">/** 函数指针调用函数时加不加*都可以*/</span>
+    <span class="n">Num</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Add</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Sub</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="o">=</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/**函数定义*/</span>
+<span class="kt">int</span> <span class="nf">F_Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">F_Sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
