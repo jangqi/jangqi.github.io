@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>存储器原理 - 文文小站</title>
+  <title>存储器 - 文文小站</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -39,22 +39,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="存储器原理" />
+<meta property="og:title" content="存储器" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jangqi.github.io/post/%E5%AD%98%E5%82%A8%E5%99%A8%E5%8E%9F%E7%90%86/" />
 <meta property="article:published_time" content="2021-04-28T19:39:03+08:00" />
 <meta property="article:modified_time" content="2021-04-28T19:39:03+08:00" />
-<meta itemprop="name" content="存储器原理">
+<meta itemprop="name" content="存储器">
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-04-28T19:39:03&#43;08:00" />
 <meta itemprop="dateModified" content="2021-04-28T19:39:03&#43;08:00" />
-<meta itemprop="wordCount" content="467">
+<meta itemprop="wordCount" content="524">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="存储器原理"/>
+<meta name="twitter:title" content="存储器"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -132,15 +132,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">存储器原理</h1>
+      <h1 class="post-title">存储器</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-04-28 </span>
         <div class="post-category">
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
+            <a href="/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/"> 硬件系统 </a>
             </div>
-          <span class="more-meta"> 约 467 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 524 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -150,7 +150,7 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#随机访问存储器"><strong>随机访问存储器</strong></a>
+    <li><a href="#存储器内存"><strong>存储器（内存）</strong></a>
       <ul>
         <li><a href="#81ram"><strong>8×1RAM</strong></a></li>
         <li><a href="#161ram阵列"><strong>16×1RAM阵列</strong></a></li>
@@ -158,53 +158,39 @@
         <li><a href="#8k8ram阵列"><strong>8k×8RAM阵列</strong></a></li>
       </ul>
     </li>
-    <li><a href="#主存储器"><strong>主存储器</strong></a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h1 id="随机访问存储器"><strong>随机访问存储器</strong></h1>
+      <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210606193845.jpg" alt="src=http___image.bubuko.com_info_201908_20190810123448402693.jpg&refer=http___image.bubuko" style="zoom:80%;" /></p>
+<h1 id="存储器内存"><strong>存储器（内存）</strong></h1>
 <hr>
 <h2 id="81ram"><strong>8×1RAM</strong></h2>
-<p>这种8位锁存器的配置称为<strong>RAM</strong>，也叫做<strong>读/写存储器</strong>或<strong>随机访问存储器</strong>。</p>
-<p>通过改变3根地址线的输入就可以在8个锁存器的任意一个读出或写入1位bit。</p>
+<p>这种8位锁存器的配置称为RAM，也叫做&quot;读/写存储器&quot;或&quot;随机访问存储器&rdquo;。</p>
+<p>通过改变3根地址线的输入就可以在8个锁存器的任意一个写入或读出1位bit。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504132933.png" alt="image-20210504132930383" style="zoom:50%;" /></p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133107.png" alt="image-20210504133028008" style="zoom:50%;" /></p>
-<ul>
-<li><strong>写入数据（3-8译码器）</strong></li>
-</ul>
+<p>“3-8译码器”用来选择一个寄存器写入数据：</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133430.png" alt="image-20210504133429405" style="zoom:50%;" /></p>
-<ul>
-<li><strong>读出数据（8-1选择器）</strong></li>
-</ul>
+<p>“8-1选择器”用来选择一个寄存器读出数据：</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133249.png" alt="image-20210504133248025" style="zoom:50%;" /></p>
 <h2 id="161ram阵列"><strong>16×1RAM阵列</strong></h2>
-<p><strong>16×1RAM阵列</strong>是通过<strong>1-2译码器</strong>从2个<strong>8×1RAM</strong>选择一个进行写入或读出数据，在这里选择输入是第4根地址线。</p>
-<p><strong>16×1RAM阵列</strong>可以存储16个单独的1位bit。</p>
+<p>“16×1RAM阵列”是通过“1-2译码器&quot;从2个&quot;8×1RAM&quot;选择一个进行写入或读出数据，在这里选择输入是第4根地址线。</p>
+<p>”16×1RAM阵列“可以存储16个单独的1位bit，通过这种连接方式实现”容量扩展“。</p>
 <blockquote>
 <p>$RAM阵列的存储容量=2^{地址线数目}$</p>
 </blockquote>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504174702.png" alt="image-20210504174700579" style="zoom:50%;" /></p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504174722.png" alt="image-20210504174721108" style="zoom:50%;" /></p>
 <h2 id="82ram阵列"><strong>8×2RAM阵列</strong></h2>
-<p><strong>8×2RAM阵列</strong>是通过共享地址的方式可以把两个<strong>8×1RAM阵列</strong>连接起来。</p>
-<p><strong>8×2RAM阵列</strong>使用相同的地址在2个<strong>8×1RAM</strong>阵列中存储8个2bit。</p>
+<p>&ldquo;8×2RAM阵列&quot;是通过共享地址的方式把两个&quot;8×1RAM阵列&quot;连接起来。使用相同的地址在2个&quot;8×1RAM阵列&quot;中存储8个2位bit，通过这种连接方式实现”位扩展“。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133755.png" alt="image-20210504133753511" style="zoom:50%;" /></p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210504133814.png" alt="image-20210504133811984" style="zoom:50%;" /></p>
 <h2 id="8k8ram阵列"><strong>8k×8RAM阵列</strong></h2>
-<p>通过地址线并行(共享地址)，数据线一一接上，这8块8K×1位存储芯片结合起来就组成8K×8位的存储器。</p>
-<p>从一片的1位到8片的8位，这就是主存容量扩展的方式之一：<strong>位扩展</strong>。</p>
+<p>通过共享地址（地址线并行，数据线一一接上），这8块”8K×1位存储芯片“结合起来就组成”8K×8位存储器“。</p>
+<p>从一片的1位到8片的8位，这就是主存容量扩展的方式之一：位扩展。</p>
 <p><img src="https://pic2.zhimg.com/80/v2-6ef1677a1326a5ae986fe92ec2eef2c5_1440w.jpg" alt="img" style="zoom: 50%;" /></p>
-<h1 id="主存储器"><strong>主存储器</strong></h1>
-<hr>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506190225.png" alt="image-20210506190223385" style="zoom:50%;" /></p>
-<ul>
-<li>存储体：存储矩阵。</li>
-<li>MAR（地址寄存器）：存储了要访问的内存单元的地址。</li>
-<li>MDR（数据寄存器）：存储了要进行读写的值，读入还是读出由读写电路决定。</li>
-</ul>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210506185926.png" alt="20201214230827361" style="zoom:50%;" /></p>
     </div>
 
     
@@ -213,7 +199,7 @@
       <nav class="post-nav">
         
         <a class="next" href="/post/%E5%A4%84%E7%90%86%E5%99%A8%E5%8E%9F%E7%90%86/">
-            <span class="next-text nav-default">处理器原理</span>
+            <span class="next-text nav-default">处理器</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

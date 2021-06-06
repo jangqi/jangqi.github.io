@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>处理器原理 - 文文小站</title>
+  <title>处理器 - 文文小站</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -39,22 +39,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="处理器原理" />
+<meta property="og:title" content="处理器" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8%E5%8E%9F%E7%90%86/" />
 <meta property="article:published_time" content="2021-05-04T18:10:45+08:00" />
 <meta property="article:modified_time" content="2021-05-04T18:10:45+08:00" />
-<meta itemprop="name" content="处理器原理">
+<meta itemprop="name" content="处理器">
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-05-04T18:10:45&#43;08:00" />
 <meta itemprop="dateModified" content="2021-05-04T18:10:45&#43;08:00" />
-<meta itemprop="wordCount" content="886">
+<meta itemprop="wordCount" content="792">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="处理器原理"/>
+<meta name="twitter:title" content="处理器"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -132,14 +132,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">处理器原理</h1>
+      <h1 class="post-title">处理器</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-05-04 </span>
         <div class="post-category">
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
+            <a href="/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/"> 硬件系统 </a>
             </div>
-          <span class="more-meta"> 约 886 字 </span>
+          <span class="more-meta"> 约 792 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -150,47 +150,40 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#处理器cpu"><strong>处理器(CPU)</strong></a></li>
-    <li><a href="#处理器与内存"><strong>处理器与内存</strong></a></li>
-    <li><a href="#程序运行过程"><strong>程序运行过程</strong></a></li>
+    <li><a href="#处理器cpu">处理器(CPU)</a></li>
+    <li><a href="#程序运行过程">程序运行过程</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h1 id="处理器cpu"><strong>处理器(CPU)</strong></h1>
+      <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210606213330.jpg" alt="v2-dcc305391dda826b70fe7d8d35121b6d_720w" style="zoom:80%;" /></p>
+<p>​	程序保存在硬盘中，程序运行首先要载入内存，但内存也仅仅存放指令和数据的地方，并不能在内存中完成运算功能。CPU通过寻址内存读取指令和数据到CPU中进行指令和数据处理，再回写到内存中。</p>
+<h1 id="处理器cpu">处理器(CPU)</h1>
 <hr>
 <p>CPU由运算器、控制器、寄存器组成。</p>
 <ul>
 <li>
 <p><strong>运算器</strong></p>
-<p>运算器执行二进制数的算术和逻辑运算。</p>
+<p>运算器执行二进制数算术运算和逻辑运算。</p>
 </li>
 <li>
 <p><strong>控制器</strong></p>
-<p>控制器是根据指令操作码，产生相应的操作控制信号，以便正确建立数字部件之间传送信息的“数据通路”。</p>
+<p>控制器对指令译码，产生相应的控制信号，建立数字部件之间传送信息的“数据通路”。</p>
 </li>
 <li>
 <p><strong>寄存器</strong></p>
-<p>寄存器暂存指令，数据等处理对象</p>
+<p>保存指令执行过程中临时存放的寄存器操作数和中间（或最终）的操作结果。</p>
 </li>
 </ul>
-<h1 id="处理器与内存"><strong>处理器与内存</strong></h1>
-<hr>
-<p>CPU通过数据总线、地址总线、控制总线与内存进行数据传输与操作。每个CPU都有很多管脚，这些管脚和总线相连。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-c436ad1765cafdda1c9caf4411b97ce7_1440w.jpg" alt="img" style="zoom: 67%;" /></p>
+<p>CPU通过数据总线、地址总线、控制总线与内存进行数据传输与操作。</p>
 <ul>
 <li>
 <p><strong>地址总线</strong></p>
 <p>CPU通过地址总线用来寻找内存的地址。</p>
-<p>地址总线的宽度决定了CPU的寻址范围，一根地址总线只能存放一个二进制数。32位的操作系统就是有32根地址线，通过共享地址的方式可以寻址$2^{32}$个8bit单位（字节），也就是最多支持4GB的内存空间。</p>
-<p><strong>内存地址编号</strong>为0000 0000 &hellip;0000 0000（32位二进制数/占用4字节），所以32位操作系统的地址编号适合可以用8位十六进制数表示0×00000000.</p>
-</li>
-</ul>
-<blockquote>
+<p>地址总线的宽度决定了CPU的寻址范围，一根地址总线只能存放一个二进制数。32位的操作系统就是有32根地址线，通过共享地址的方式可以寻址$2^{32}$个字节，也就是最多支持4GB的内存空间。</p>
 <p>$CPU寻址范围=2^{地址总线数目}$</p>
-</blockquote>
-<ul>
+</li>
 <li>
 <p><strong>数据总线</strong></p>
 <p>CPU通过数据总线与其他数字部件进行数据传输。</p>
@@ -199,19 +192,16 @@
 </li>
 <li>
 <p><strong>控制总线</strong></p>
-<p>CPU用来传送操作控制信号，以便正确建立数字部件之间传送信息的“数据通路”。</p>
+<p>CPU用来传送控制信号，以便正确建立数字部件之间传送信息的“数据通路”。</p>
 </li>
 </ul>
-<h1 id="程序运行过程"><strong>程序运行过程</strong></h1>
+<h1 id="程序运行过程">程序运行过程</h1>
 <hr>
-<p><strong>程序运行过程（CPU、FLASH、内存）：</strong></p>
-<p><strong>Flash</strong>是存放程序和数据，<strong>内存</strong>是程序的运行空间，<strong>CPU</strong>是控制中心。</p>
-<p><img src="https://img-blog.csdnimg.cn/2020041611281824.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NoZW5HdWlHYW4=,size_16,color_FFFFFF,t_70" alt="img" style="zoom: 80%;" /></p>
-<p>程序首先躺在flash里面（以二进制码的形式存在FLASH中），分为3个段，代码段、数据段，bss段;</p>
-<p>上电后，CPU通过控制器将待运行的程序从FLASH中读入内存中；</p>
-<p>代码在内存中运行时，控制器将需要计算的数据存入寄存器中；</p>
-<p>运算器从寄存器中读取数据进行运算，并将结果存入寄存器中；</p>
-<p>控制器将寄存器中的结果读入内存中；</p>
+<p>上电前，程序以二进制码的形式存在FLASH中，</p>
+<p>上电后，CPU通过控制器将待运行的程序从FLASH中读入内存中，</p>
+<p>程序运行时，控制器将需要计算的数据存入寄存器中，</p>
+<p>运算器从寄存器中读取数据进行运算，并将结果存入寄存器中，</p>
+<p>控制器将寄存器中的结果读入内存中，</p>
 <p>形成一个闭环的程序运行过程。</p>
     </div>
 
@@ -221,11 +211,11 @@
       <nav class="post-nav">
         <a class="prev" href="/post/%E5%AD%98%E5%82%A8%E5%99%A8%E5%8E%9F%E7%90%86/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">存储器原理</span>
+            <span class="prev-text nav-default">存储器</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
-            <span class="next-text nav-default">通信原理</span>
+        <a class="next" href="/post/%E7%BC%96%E7%A0%81/">
+            <span class="next-text nav-default">编码</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
