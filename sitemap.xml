@@ -37,6 +37,20 @@
   </url>
   
   <url>
+    <loc>https://jangqi.github.io/post/c%E5%92%8C%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2021-05-05T20:47:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jangqi.github.io/post/c%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2021-06-06T18:47:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://jangqi.github.io/post/scade-suite/</loc>
     <lastmod>2021-04-05T18:45:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -51,7 +65,14 @@
   </url>
   
   <url>
-    <loc>https://jangqi.github.io/post/c%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
+    <loc>https://jangqi.github.io/categories/</loc>
+    <lastmod>2021-06-06T18:47:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jangqi.github.io/categories/c%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2021-06-06T18:47:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -60,27 +81,6 @@
   <url>
     <loc>https://jangqi.github.io/post/</loc>
     <lastmod>2021-06-06T18:47:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jangqi.github.io/categories/</loc>
-    <lastmod>2021-05-05T20:47:55+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jangqi.github.io/post/c%E5%92%8C%E6%8C%87%E9%92%88/</loc>
-    <lastmod>2021-05-05T20:47:55+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://jangqi.github.io/categories/c%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2021-05-05T20:47:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
