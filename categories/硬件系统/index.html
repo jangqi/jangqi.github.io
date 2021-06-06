@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>通信原理 - 文文小站</title>
+  <title>硬件系统 · 文文小站</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="JangQi" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="JangQi" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,9 @@
 <meta name="generator" content="Hugo 0.66.0 with theme even" />
 
 
-<link rel="canonical" href="https://jangqi.github.io/post/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" />
+<link rel="canonical" href="https://jangqi.github.io/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/" />
+  <link href="https://jangqi.github.io/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.xml" rel="alternate" type="application/rss+xml" title="文文小站" />
+  <link href="https://jangqi.github.io/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.xml" rel="feed" type="application/rss+xml" title="文文小站" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,23 +41,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="通信原理" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://jangqi.github.io/post/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/" />
-<meta property="article:published_time" content="2021-05-04T21:27:22+08:00" />
-<meta property="article:modified_time" content="2021-05-04T21:27:22+08:00" />
-<meta itemprop="name" content="通信原理">
-<meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-05-04T21:27:22&#43;08:00" />
-<meta itemprop="dateModified" content="2021-05-04T21:27:22&#43;08:00" />
-<meta itemprop="wordCount" content="440">
-
-
-
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="通信原理"/>
-<meta name="twitter:description" content=""/>
+<meta property="og:title" content="硬件系统" />
+<meta property="og:description" content="Hugo theme even example site." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jangqi.github.io/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/" />
+<meta property="og:updated_time" content="2021-05-04T18:10:45+08:00" />
+<meta itemprop="name" content="硬件系统">
+<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="硬件系统"/>
+<meta name="twitter:description" content="Hugo theme even example site."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,81 +123,38 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">通信原理</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2021-05-04 </span>
-        <div class="post-category">
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
-            </div>
-          <span class="more-meta"> 约 440 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
-        
+          <section id="archive" class="archive">
+  <div class="archive-title category">
+        <h2 class="archive-name">硬件系统</h2>
       </div>
-    </header>
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#通信">通信</a>
-      <ul>
-        <li><a href="#串口通信">串口通信</a></li>
-        <li><a href="#字节流">字节流</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      <h1 id="通信">通信</h1>
-<p>通信中的两个方面：信息表示和解析方法+信息传输方法。</p>
-<p>通信协议：串口通信协议是指规定了数据包的内容，内容包含了起始位、主体数据、校验位及停止位，双方需要约定一致的数据包格式才能正常收发数据的有关规范。在串口通信中，常用的协议包括RS-232、RS-422和RS-485。</p>
-<h2 id="串口通信">串口通信</h2>
-<p>串口通信是按位（bit）发送和接收字节(byte[])。尽管比按字节（byte）的并行通信慢，但是串口可以在使用一根线发送数据的同时用另一根线接收数据。它很简单并且能够实现远距离通信。</p>
-<p><a href="https://baike.baidu.com/item/%E4%B8%B2%E5%8F%A3/1250303">串口</a>在嵌入式系统当中是一类重要的数据通信接口，其本质功能是作为 CPU 和串行设备间的编码<a href="https://baike.baidu.com/item/%E8%BD%AC%E6%8D%A2%E5%99%A8/4272">转换器</a>。当数据从 CPU 经过串行端口发送出去时，字节数据转换为串行的位；在接收数据时，串行的位被转换为字节数据。</p>
-<h2 id="字节流">字节流</h2>
-<p>字节流是由字节组成byte[]数组。</p>
-<p>字节流是程序输入或输出的一个连续的字节序列，设备（例如鼠标，键盘，磁盘，屏幕和打印机）的输入和输出都是用流来处理的。</p>
-<p>字节流解析是根据数值占用bit数，按顺序从输入字节流中解析出对应数值。</p>
+  <div class="archive-post">
+      <span class="archive-post-time">
+        2021-04-28
+      </span>
+      <span class="archive-post-title">
+        <a href="/post/%E5%AD%98%E5%82%A8%E5%99%A8/" class="archive-post-link">
+          存储器
+        </a>
+      </span>
+    </div><div class="archive-post">
+      <span class="archive-post-time">
+        2021-05-04
+      </span>
+      <span class="archive-post-title">
+        <a href="/post/%E5%A4%84%E7%90%86%E5%99%A8/" class="archive-post-link">
+          处理器
+        </a>
+      </span>
     </div>
+</section>
 
-    
-<footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="/post/%E5%A4%84%E7%90%86%E5%99%A8/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">处理器</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/%E7%BC%96%E7%A0%81/">
-            <span class="next-text nav-default">编码</span>
-            <span class="next-text nav-mobile">下一篇</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+<nav class="pagination">
+  
+  
+</nav>
         </div>
         
-
-  
-
-  
-    <script src="https://utteranc.es/client.js"
-            repo="jangqi/utterances"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>
@@ -247,14 +198,6 @@
 
 
 <script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        }
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 

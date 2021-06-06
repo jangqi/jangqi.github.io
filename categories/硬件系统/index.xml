@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>硬件系统 on 文文小站</title>
+    <link>https://jangqi.github.io/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 硬件系统 on 文文小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 May 2021 18:10:45 +0800</lastBuildDate>
+    
+	<atom:link href="https://jangqi.github.io/categories/%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>存储器</title>
+      <link>https://jangqi.github.io/post/%E5%AD%98%E5%82%A8%E5%99%A8/</link>
+      <pubDate>Wed, 28 Apr 2021 19:39:03 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/%E5%AD%98%E5%82%A8%E5%99%A8/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210606193845.jpg&#34; alt=&#34;src=http___image.bubuko.com_info_201908_20190810123448402693.jpg&amp;refer=http___image.bubuko&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>处理器</title>
+      <link>https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8/</link>
+      <pubDate>Tue, 04 May 2021 18:10:45 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
