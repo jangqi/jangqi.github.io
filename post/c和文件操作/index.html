@@ -49,7 +49,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-06-06T23:19:49&#43;08:00" />
 <meta itemprop="dateModified" content="2021-06-06T23:19:49&#43;08:00" />
-<meta itemprop="wordCount" content="418">
+<meta itemprop="wordCount" content="402">
 
 
 
@@ -139,7 +139,7 @@
         <div class="post-category">
             <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
             </div>
-          <span class="more-meta"> 约 418 字 </span>
+          <span class="more-meta"> 约 402 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         
       </div>
@@ -148,16 +148,31 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文件操作">文件操作</a>
+      <ul>
+        <li><a href="#文件">文件</a></li>
+        <li><a href="#缓冲区">缓冲区</a></li>
+        <li><a href="#文件操作函数">文件操作函数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>缓冲区</p>
-<p>​	缓冲区又称为缓存，它是内存空间的一部分。也就是说，在内存空间中预留了一定的存储空间，这些存储空间用来缓冲输入或输出的数据，这部分预留的空间就叫做缓冲区。</p>
+      <h1 id="文件操作">文件操作</h1>
+<hr>
+<h2 id="文件">文件</h2>
+<p>文件(file)是磁盘或硬盘上一段已命名的存储区，所有文件以二进制形式存储。</p>
+<p>c把文件看作是一系列连续的字节，每个字节都能被单独的读取。</p>
+<h2 id="缓冲区">缓冲区</h2>
+<p>​	缓冲区又称为缓存，它是内存空间的一部分，专门用来缓存数据，供程序读写。</p>
 <p>​	缓冲区根据其对应的是输入设备还是输出设备，分为输入缓冲区和输出缓冲区。</p>
-<p>​	C语言打开文件时，先将文件内容载入缓冲区（缓存），并返回一个指向FILE结构体的指针，接下来对文件的操作，都映射成对缓冲区的操作，只有当强制刷新缓冲区、关闭文件或程序运行结束时，才将缓冲区中的内容更新到文件。就像编辑word文档，并不是立刻将编辑好的内容写入到磁盘上的文件，而是对缓存中的副本进行操作，只有当保存文件时，才将副本同步到磁盘上的文件。</p>
-<p>​	缓冲区有很多类型，我们这里指的缓冲区是主存（内存条）上的一块特殊区域，专门用来缓存数据，供程序读写。</p>
+<p>​	C语言打开文件时，先将文件内容载入缓冲区，并返回一个指向FILE结构体的指针，接下来对文件的操作，都映射成对缓冲区的操作，只有当强制刷新缓冲区、关闭文件或程序运行结束时，才将缓冲区中的内容更新到文件。就像编辑word文档，并不是立刻将编辑好的内容写入到磁盘上的文件，而是对缓冲区中的副本进行操作，只有当保存文件时，才将副本同步到磁盘上的文件。</p>
 <p>​	而由于硬件不同，将缓冲区的内容同步到文件的过程可能比较繁杂，不易操作，这些都由操作系统完成，对编程人员不可见，编程人员只要能操作接口简单的缓冲区即可。</p>
+<h2 id="文件操作函数">文件操作函数</h2>
     </div>
 
     
