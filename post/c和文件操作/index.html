@@ -49,7 +49,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2021-06-06T23:19:49&#43;08:00" />
 <meta itemprop="dateModified" content="2021-06-06T23:19:49&#43;08:00" />
-<meta itemprop="wordCount" content="402">
+<meta itemprop="wordCount" content="631">
 
 
 
@@ -139,8 +139,8 @@
         <div class="post-category">
             <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
             </div>
-          <span class="more-meta"> 约 402 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 631 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -152,9 +152,8 @@
   <ul>
     <li><a href="#文件操作">文件操作</a>
       <ul>
-        <li><a href="#文件">文件</a></li>
         <li><a href="#缓冲区">缓冲区</a></li>
-        <li><a href="#文件操作函数">文件操作函数</a></li>
+        <li><a href="#文件操作步骤">文件操作步骤</a></li>
       </ul>
     </li>
   </ul>
@@ -164,15 +163,31 @@
     <div class="post-content">
       <h1 id="文件操作">文件操作</h1>
 <hr>
-<h2 id="文件">文件</h2>
-<p>文件(file)是磁盘或硬盘上一段已命名的存储区，所有文件以二进制形式存储。</p>
-<p>c把文件看作是一系列连续的字节，每个字节都能被单独的读取。</p>
+<p>​	在C语言中，把文件和系统设备都将视为文件来看待；</p>
+<p>​	c把文件看作是一系列连续的字节，每个字节都能被单独的读取。</p>
+<p>​	输入字节流来源于文件，输入设备（如键盘），或者是另一个程序的输出，</p>
+<p>​	输出字节流的目的地可以是文件、视频显示等。</p>
 <h2 id="缓冲区">缓冲区</h2>
 <p>​	缓冲区又称为缓存，它是内存空间的一部分，专门用来缓存数据，供程序读写。</p>
 <p>​	缓冲区根据其对应的是输入设备还是输出设备，分为输入缓冲区和输出缓冲区。</p>
 <p>​	C语言打开文件时，先将文件内容载入缓冲区，并返回一个指向FILE结构体的指针，接下来对文件的操作，都映射成对缓冲区的操作，只有当强制刷新缓冲区、关闭文件或程序运行结束时，才将缓冲区中的内容更新到文件。就像编辑word文档，并不是立刻将编辑好的内容写入到磁盘上的文件，而是对缓冲区中的副本进行操作，只有当保存文件时，才将副本同步到磁盘上的文件。</p>
 <p>​	而由于硬件不同，将缓冲区的内容同步到文件的过程可能比较繁杂，不易操作，这些都由操作系统完成，对编程人员不可见，编程人员只要能操作接口简单的缓冲区即可。</p>
-<h2 id="文件操作函数">文件操作函数</h2>
+<h2 id="文件操作步骤">文件操作步骤</h2>
+<p>​	每一步的操作都有对应的函数来提供&quot;接口&quot;来帮我们实现。</p>
+<ul>
+<li>
+<p><strong>打开文件</strong></p>
+<p>需要用到fopen函数来实现，获取文件在内存中的文件指针，方便后面的文件操作。</p>
+</li>
+<li>
+<p><strong>读写文件</strong></p>
+<p>读写文件分为fprintf、fscanf或者fwrite、fread或者fputs、getss等多组函数来实现。</p>
+</li>
+<li>
+<p><strong>关闭文件</strong></p>
+<p>关闭文件则需要fclose函数实现，这一步则是切断文件指针和文件的关联，避免误操作。</p>
+</li>
+</ul>
     </div>
 
     
