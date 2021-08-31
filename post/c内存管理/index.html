@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>C和内存管理 - 文文小站</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="JangQi" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.66.0 with theme even" />
+
+
+<link rel="canonical" href="https://jangqi.github.io/post/c%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b87e76cd589b185c91369316107a6cff8b59e96cf13a7e3b13b57dfb75b68d79.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="C和内存管理" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jangqi.github.io/post/c%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" />
+<meta property="article:published_time" content="2021-06-06T18:47:31+08:00" />
+<meta property="article:modified_time" content="2021-06-06T18:47:31+08:00" />
+<meta itemprop="name" content="C和内存管理">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2021-06-06T18:47:31&#43;08:00" />
+<meta itemprop="dateModified" content="2021-06-06T18:47:31&#43;08:00" />
+<meta itemprop="wordCount" content="1549">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C和内存管理"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文文小站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/c%E8%AF%AD%E8%A8%80">
+        <li class="mobile-menu-item">c专栏</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a><a href="">
+        <li class="mobile-menu-item"></li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文文小站</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/c%E8%AF%AD%E8%A8%80">c专栏</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href=""></a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">C和内存管理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-06-06 </span>
+        <div class="post-category">
+            <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
+            </div>
+          <span class="more-meta"> 约 1549 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#内存管理">内存管理</a>
+      <ul>
+        <li><a href="#存储类别">存储类别</a></li>
+        <li><a href="#内存分区">内存分区</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="内存管理">内存管理</h1>
+<hr>
+<p>变量主要是两种形式，一种内容短小（比如一个int整数），需要频繁访问，但是生命周期很短，通常只在一个函数内存活。而另一种内容多（比如一个长字符串），可能不需要太频繁的访问，但生命周期较长，通常多个函数中可能都要用到。那么自然将这两类变量分开就显得比较理性，一类存储在栈区，通常是局部变量和函数形参，另一类存储在堆区，通常是较大的数组、需要反复访问的全局变量。</p>
+<p>从软件设计的角度看，栈代表了处理逻辑，而堆代表了数据。</p>
+<p>栈区就像临时工，干完就跑，所以超快，但是缺点也很多，比如生命周期短，一般只能在一个函数内存活，而且通常最大栈区可用内存都很小，你不可能往栈区里堆很多数据。</p>
+<p>堆区申请内存慢，访问慢，修改慢，释放慢，但优点也不言而喻，空间超大，在不超可用内存的情况下你要多大就给多大。</p>
+<h2 id="存储类别">存储类别</h2>
+<ul>
+<li>
+<p><strong>静态存储</strong></p>
+<p>在程序开始执行时分配内存，并在程序运行期间都存在。</p>
+</li>
+<li>
+<p><strong>自动存储</strong></p>
+<p>在程序进入变量的作用域时分配变量的内存，在程序离开后变量的作用域后释放内存。</p>
+</li>
+<li>
+<p><strong>动态分配</strong></p>
+<p>调用malloc()函数时分配内存，在调用free()函数时释放内存。</p>
+</li>
+</ul>
+<h2 id="内存分区">内存分区</h2>
+<p>计算机中的内存是分区来管理的，程序和程序之间的内存是独立的，不能互相访问，不同程序所占的内存区域是不能相互访问的。而每个程序的内存也是分区管理的，一个应用程序所占的内存主要分为四个区域。</p>
+<ol>
+<li>操作系统把硬盘上的程序代码加载到内存中；</li>
+<li>操作系统把c代码分成四个区域存放；</li>
+<li>操作系统找到入口函数main，开始执行程序。</li>
+</ol>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210611104821.png" alt="1449975-20190104213122533-1904218420" style="zoom:80%;" /></p>
+<ul>
+<li>
+<p><strong>代码区</strong></p>
+<p>程序被操作系统加载到内存的时候，所有的可执行代码（程序代码指令、常量字符串等）都加载到代码区，这块内存在程序运行期间是不变的。代码区里面装的就是一堆指令，函数也是代码的一部分，故函数都被放在代码区，包括main函数。</p>
+</li>
+<li>
+<p><strong>静态区</strong></p>
+<p>存放程序中所有的全局变量和静态变量。</p>
+</li>
+<li>
+<p><strong>栈区（stack）</strong></p>
+<p>栈是一种先进后出的内存结构，存放程序中所有的自动变量和函数形参。</p>
+<p>每个线程都有自己专属的栈；</p>
+<p>栈的最大尺寸固定，超出则引起栈溢出，通常Visual C++编译器的默认栈的大小为1MB，所以不要定义int a[1000000]这样的超大数组。</p>
+<p>变量离开作用域后栈上的内存会自动释放。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 栈变量与作用域*/</span>
+  
+<span class="cm">/*函数的返回值是一个指针，但这样做是不合法的，因为getx()函数调用结束后栈变量x的地址就无效了。
+</span><span class="cm">   不能将一个栈变量的地址通过函数的返回值返回，
+</span><span class="cm">   如果非要这样做，需要在变量x前加static关键字修饰，即static int x =10; */</span>
+<span class="kt">int</span><span class="o">*</span> <span class="nf">getx</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+  
+<span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">getx</span><span class="p">();</span>
+    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>
+<span class="p">}</span>
+  
+<span class="cm">/** 栈溢出*/</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">array_char</span><span class="p">[</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="n">array_char</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s&#34;</span><span class="p">,</span> <span class="n">array_char</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>堆区（heap）</strong></p>
+<p>堆和栈一样，也是一种在程序运行过程中可以随时修改的内存区域，但没有栈那样先进后出的顺序。</p>
+<p>更重要的是堆是一个大容器，它的容量要远远大于栈，对于一个32位操作系统，最大管理管理4G内存，其中1G是给操作系统自己用的，剩下的3G都是给用户程序，一个用户程序理论上可以使用3G的内存空间。</p>
+<p>在C语言中，堆内存空间的申请和释放需要手动通过代码来完成。</p>
+<p>使用malloc()函数用来在堆中分配指定大小且连续的内存，单位为字节（Byte），函数返回void *指针，若内存申请成功，函数返回申请到的内存的起始地址，若申请失败，返回NULL。申请成功时这块内存空间在函数执行完成后不会被初始化，它们的值是未知的。</p>
+<p>使用free()函数释放malloc()分配的堆内存，该函数必须提供动态分配的内存的起始地址，因此，必须保存好malloc()返回的指针值，若丢失，则所分配的堆空间无法回收，称内存泄漏。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="kt">int</span><span class="o">*</span> <span class="nf">getx</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="cm">/** 申请了一个堆空间*/</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>  
+    <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">p1</span><span class="p">;</span>
+<span class="p">}</span>
+  
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="n">getx</span><span class="p">();</span>
+    <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+      
+    <span class="cm">/** 释放malloc()申请的堆空间*/</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>  
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+    </div>
+
+    
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/c%E6%8C%87%E9%92%88/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">c指针</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/c%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
+            <span class="next-text nav-default">C文件操作</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="jangqi/utterances"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:jangqi@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/jangqi" class="iconfont icon-github" title="github"></a>
+  <a href="https://jangqi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>JangQi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

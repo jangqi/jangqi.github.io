@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>处理器 - 文文小站</title>
+  <title>C文件操作 - 文文小站</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.66.0 with theme even" />
 
 
-<link rel="canonical" href="https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8/" />
+<link rel="canonical" href="https://jangqi.github.io/post/c%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,22 +39,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="处理器" />
+<meta property="og:title" content="C文件操作" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8/" />
-<meta property="article:published_time" content="2021-05-04T18:10:45+08:00" />
-<meta property="article:modified_time" content="2021-05-04T18:10:45+08:00" />
-<meta itemprop="name" content="处理器">
+<meta property="og:url" content="https://jangqi.github.io/post/c%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" />
+<meta property="article:published_time" content="2021-06-06T23:19:49+08:00" />
+<meta property="article:modified_time" content="2021-06-06T23:19:49+08:00" />
+<meta itemprop="name" content="C文件操作">
 <meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-05-04T18:10:45&#43;08:00" />
-<meta itemprop="dateModified" content="2021-05-04T18:10:45&#43;08:00" />
-<meta itemprop="wordCount" content="805">
+<meta itemprop="datePublished" content="2021-06-06T23:19:49&#43;08:00" />
+<meta itemprop="dateModified" content="2021-06-06T23:19:49&#43;08:00" />
+<meta itemprop="wordCount" content="651">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="处理器"/>
+<meta name="twitter:title" content="C文件操作"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -132,14 +132,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">处理器</h1>
+      <h1 class="post-title">C文件操作</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-05-04 </span>
+        <span class="post-time"> 2021-06-06 </span>
         <div class="post-category">
-            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"> 计算机原理 </a>
+            <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
             </div>
-          <span class="more-meta"> 约 805 字 </span>
+          <span class="more-meta"> 约 651 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
@@ -150,73 +150,56 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#处理器cpu">处理器(CPU)</a></li>
-    <li><a href="#程序运行过程">程序运行过程</a></li>
+    <li><a href="#文件操作">文件操作</a>
+      <ul>
+        <li><a href="#缓冲区">缓冲区</a></li>
+        <li><a href="#文件操作步骤">文件操作步骤</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210606213330.jpg" alt="v2-dcc305391dda826b70fe7d8d35121b6d_720w" style="zoom:80%;" /></p>
-<p>程序保存在硬盘中，程序运行首先要载入内存，但内存也仅仅存放指令和数据的地方，并不能在内存中完成运算功能。</p>
-<p>完成数据运算的器件是CPU，CPU通过寻址内存读取指令和数据到CPU中进行指令和数据处理，再回写到内存中。</p>
-<h1 id="处理器cpu">处理器(CPU)</h1>
+      <h1 id="文件操作">文件操作</h1>
 <hr>
-<p>CPU由运算器、控制器、寄存器组成。</p>
+<p>在C语言中，把文件和系统设备都将视为文件来看待，文件又看作是一系列连续的字节，每个字节都能被单独的读取。</p>
+<p>输入字节流来源于文件，输入设备（如键盘），或者是另一个程序的输出，</p>
+<p>输出字节流的目的地可以是文件、视频显示等。</p>
+<h2 id="缓冲区">缓冲区</h2>
+<p>缓冲区又称为缓存，它是内存空间的一部分，专门用来缓存数据，供程序读写。</p>
+<p>缓冲区根据其对应的是输入设备还是输出设备，分为输入缓冲区和输出缓冲区。</p>
+<p>C语言打开文件时，先将文件内容载入缓冲区，并返回一个指向FILE结构体的指针，接下来对文件的操作，都映射成对缓冲区的操作，只有当强制刷新缓冲区、关闭文件或程序运行结束时，才将缓冲区中的内容更新到文件。就像编辑word文档，并不是立刻将编辑好的内容写入到磁盘上的文件，而是对缓冲区中的副本进行操作，只有当保存文件时，才将副本同步到磁盘上的文件。</p>
+<p>而由于硬件不同，将缓冲区的内容同步到文件的过程可能比较繁杂，不易操作，这些都由操作系统完成，对编程人员不可见，编程人员只要能操作接口简单的缓冲区即可。</p>
+<h2 id="文件操作步骤">文件操作步骤</h2>
+<p>​	c语言操作文件时，每一步操作都有对应的函数来提供&quot;接口&quot;来帮我们实现。</p>
 <ul>
 <li>
-<p><strong>运算器</strong></p>
-<p>运算器执行二进制数算术运算和逻辑运算。</p>
+<p><strong>打开文件</strong></p>
+<p>打开文件需要用fopen()函数来实现，获取文件在内存中的文件指针，方便后面的文件操作。</p>
 </li>
 <li>
-<p><strong>控制器</strong></p>
-<p>控制器对指令译码，产生相应的控制信号，建立数字部件之间传送信息的“数据通路”。</p>
+<p><strong>读写文件</strong></p>
+<p>读写文件分为fprintf()、fscanf()，或者fwrite()、fread()，或者fputs()、getss()等多组函数来实现。</p>
 </li>
 <li>
-<p><strong>寄存器</strong></p>
-<p>保存指令执行过程中临时存放的寄存器操作数和中间（或最终）的操作结果。</p>
+<p><strong>关闭文件</strong></p>
+<p>关闭文件需要用fclose()函数实现，这一步则是切断文件指针和文件的关联，避免误操作。</p>
 </li>
 </ul>
-<p>CPU通过数据总线、地址总线、控制总线与内存进行数据传输与操作。</p>
-<ul>
-<li>
-<p><strong>地址总线</strong></p>
-<p>CPU通过地址总线用来寻找内存的地址。</p>
-<p>地址总线的宽度决定了CPU的寻址范围，一根地址总线只能存放一个二进制数。32位的操作系统就是有32根地址线，通过共享地址的方式可以寻址$2^{32}$个字节，也就是最多支持4GB的内存空间。</p>
-<p>$CPU寻址范围=2^{地址总线数目}$</p>
-</li>
-<li>
-<p><strong>数据总线</strong></p>
-<p>CPU通过数据总线与其他数字部件进行数据传输。</p>
-<p>数据总线的宽度决定了CPU的单次数据传输量。一根数据总线只能存放一个二进制数。因此N根数据总线，一次最多只能传送N位二进制。</p>
-<p>所以在32位CPU中，编程用到的数据类型，如整型，应优先使用int，一个int占4字节，一个字节为8bit，总共32bit，一次完成传输需要32位数据总线。而比int占用更小的数据类型，如short int，在32位CPU中要完成一次传输也是需要32位数据总线。</p>
-</li>
-<li>
-<p><strong>控制总线</strong></p>
-<p>CPU用来传送控制信号，以便正确建立数字部件之间传送信息的“数据通路”。</p>
-</li>
-</ul>
-<h1 id="程序运行过程">程序运行过程</h1>
-<hr>
-<p>上电前，程序以二进制码的形式存在FLASH中，</p>
-<p>上电后，CPU通过控制器将待运行的程序从FLASH中读入内存中，</p>
-<p>程序运行时，控制器将需要计算的数据存入寄存器中，</p>
-<p>运算器从寄存器中读取数据进行运算，并将结果存入寄存器中，</p>
-<p>控制器将寄存器中的结果读入内存中，</p>
-<p>形成一个闭环的程序运行过程。</p>
     </div>
 
     
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/%E5%AD%98%E5%82%A8%E5%99%A8/">
+        <a class="prev" href="/post/c%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">存储器</span>
+            <span class="prev-text nav-default">C和内存管理</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/c%E8%AF%AD%E8%A8%80/">
-            <span class="next-text nav-default">C语言</span>
+        <a class="next" href="/post/scade-suite/">
+            <span class="next-text nav-default">SCADE_Suite</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

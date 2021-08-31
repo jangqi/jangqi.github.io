@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>c指针 - 文文小站</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="JangQi" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.66.0 with theme even" />
+
+
+<link rel="canonical" href="https://jangqi.github.io/post/c%E6%8C%87%E9%92%88/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b87e76cd589b185c91369316107a6cff8b59e96cf13a7e3b13b57dfb75b68d79.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="c指针" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jangqi.github.io/post/c%E6%8C%87%E9%92%88/" />
+<meta property="article:published_time" content="2021-05-05T20:47:55+08:00" />
+<meta property="article:modified_time" content="2021-05-05T20:47:55+08:00" />
+<meta itemprop="name" content="c指针">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2021-05-05T20:47:55&#43;08:00" />
+<meta itemprop="dateModified" content="2021-05-05T20:47:55&#43;08:00" />
+<meta itemprop="wordCount" content="1482">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="c指针"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文文小站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/c%E8%AF%AD%E8%A8%80">
+        <li class="mobile-menu-item">c专栏</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a><a href="">
+        <li class="mobile-menu-item"></li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文文小站</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/c%E8%AF%AD%E8%A8%80">c专栏</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href=""></a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">c指针</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-05-05 </span>
+        <div class="post-category">
+            <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
+            </div>
+          <span class="more-meta"> 约 1482 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#指针">指针</a></li>
+    <li><a href="#const与指针">const与指针</a></li>
+    <li><a href="#数组与指针">数组与指针</a></li>
+    <li><a href="#结构体与指针">结构体与指针</a></li>
+    <li><a href="#函数与指针">函数与指针</a>
+      <ul>
+        <li><a href="#指针函数">指针函数</a></li>
+        <li><a href="#函数指针">函数指针</a>
+          <ul>
+            <li><a href="#带函数指针形参的函数">带函数指针形参的函数</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="指针">指针</h1>
+<p>指针变量存储内存地址。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="n">F_Pointer</span><span class="err">（</span><span class="kt">void</span><span class="err">）</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   
+    <span class="cm">/** 声明指针*/</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>              <span class="cm">/* 指针变量(自动存储)未初始化的，默认值是随机的*/</span>
+    
+    <span class="cm">/** 指针赋值*/</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>         <span class="cm">/* int a的首地址赋值给指针变量p*/</span>
+    
+    <span class="cm">/** 解引用指针*/</span>
+    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="err">；</span>         <span class="cm">/*指针变量指向的类型决定访问内存地址的延续长度*/</span>
+   
+    <span class="cm">/** 指针运算*/</span>
+    <span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>               <span class="cm">/*指针与整数相加：从当前地址向后移动2个int单元*/</span>
+    <span class="n">p</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span>                <span class="cm">/*指针与整数相减：从当前地址向前移动2个int单元*/</span>
+    <span class="n">p</span><span class="o">++</span><span class="p">;</span>              <span class="cm">/*递增指针：从当前地址向后移动1个int单元*/</span>
+    <span class="n">p</span><span class="o">--</span><span class="p">;</span>                <span class="cm">/*递减指针：从当前地址向前移动1个int单元*/</span>  
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="const与指针">const与指针</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>             <span class="cm">/** 指针指向地址上的值不能被修改*/</span>
+<span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span>             <span class="cm">/** 指针变量的值不可被修改，不能再指向其他的地址*/</span>
+<span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p</span><span class="p">;</span>   <span class="cm">/** 指针变量的值不可被修改，也不能修改指向地址上的值*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="数组与指针">数组与指针</h1>
+<ul>
+<li>
+<p><strong>数组</strong></p>
+<p>数组中元素的数据类型相同，且存储地址是依次相连的。</p>
+</li>
+<li>
+<p><strong>数组名</strong></p>
+<p>数组名是一个地址常量，是数组的首元素的首地址。</p>
+</li>
+<li>
+<p><strong>数组元素的访问方式</strong></p>
+<p>数组有两种访问方式，数组下标方式只是编译器提供给编程者一种壳（语法糖）而已，实质上在编译器内部都是用指针方式来访问数组元素的。</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define c_arr_len 5
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">F_Main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">c_arr_len</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+	<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">sum</span> <span class="o">=</span> <span class="n">F_Arr</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">c_arr_len</span><span class="p">);</span>  <span class="cm">/*传值调用*/</span>
+	<span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** 函数定义：数组表示法*/</span>
+<span class="kt">void</span> <span class="nf">F_Arr</span><span class="p">(</span><span class="kt">int</span> <span class="n">array</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> 
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** 函数定义：指针表示法*/</span>
+<span class="kt">void</span> <span class="nf">F_Array_P</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span>   
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="n">arr</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">sum</span><span class="p">;</span>  
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="结构体与指针">结构体与指针</h1>
+<ul>
+<li>
+<p><strong>结构体</strong></p>
+<p>一组类型相同或不同的变量。</p>
+</li>
+<li>
+<p><strong>结构体赋值</strong></p>
+<p>声明结构体变量同时可以整体初始化；</p>
+<p>声明结构体变量之后，只能单独给结构成员赋值；</p>
+<p>两个结构体类型相同的变量可以相互赋值。</p>
+</li>
+<li>
+<p><strong>结构体成员的访问方式</strong></p>
+<p>结构体变量.结构体成员；</p>
+<p>“结构体指针-&gt;结构体成员；</p>
+<p>(*结构体指针).结构体成员；</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 声明结构体类型*/</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">S_Time_TYPE</span>
+<span class="p">{</span>
+    <span class="kt">int</span>  <span class="n">Year</span><span class="p">;</span>                        <span class="cm">/** 年*/</span>
+    <span class="kt">int</span>  <span class="n">Month</span><span class="p">;</span>                    <span class="cm">/** 月*/</span>
+    <span class="kt">int</span>  <span class="n">Day</span><span class="p">;</span>                         <span class="cm">/** 日*/</span>
+<span class="p">}</span> <span class="n">S_Time</span><span class="p">;</span>
+
+<span class="cm">/** 函数的返回值可以是结构体类型的值*/</span>
+<span class="n">S_Time</span> <span class="nf">F_Main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/** 定义结构体类型的变量（定义时初始化）*/</span>
+    <span class="n">S_Time</span> <span class="n">S_LCU_Time</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+   
+    <span class="cm">/** 定义结构体类型的变量后，单独赋值*/</span>
+    <span class="n">S_Time</span> <span class="n">S_DMI_Time</span><span class="p">;</span>
+    <span class="n">DMI_Time</span><span class="p">.</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">DMI_Time</span><span class="p">.</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">DMI_Time</span><span class="p">.</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="cm">/** 传结构体的值调用函数*/</span>
+    <span class="n">F_LCU_Time</span><span class="p">(</span><span class="n">S_LCU_Time</span><span class="p">);</span>
+    
+    <span class="cm">/** 传结构的地址值调用函数*/</span>
+    <span class="n">F_DMI_Time</span><span class="p">(</span><span class="o">&amp;</span><span class="n">S_DMI_Time</span><span class="p">);</span>
+    
+    <span class="cm">/** 相同类型的结构体可以互相赋值*/</span>
+    <span class="n">S_DMI_Time</span> <span class="o">=</span> <span class="n">S_LCU_Time</span><span class="p">;</span>
+   
+    <span class="cm">/** 函数可以返回结构体类型的值*/</span>
+    <span class="k">return</span> <span class="n">S_DMI_Time</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** 定义带结构体形参的函数*/</span>    
+<span class="kt">void</span> <span class="nf">F_LCU_Time</span><span class="p">(</span><span class="n">S_Time</span> <span class="n">S_LCU_Time</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">S_LCU_Time</span><span class="p">.</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">2021</span><span class="p">;</span>
+    <span class="n">S_LCU_Time</span><span class="p">.</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">S_LCU_Time</span><span class="p">.</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** 定义带结构体形参的函数*/</span>
+<span class="kt">void</span> <span class="nf">F_DMI_Time</span><span class="p">(</span><span class="n">S_Time</span> <span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">).</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">2021</span>  <span class="cm">/** 等效 S_DMI_Time-&gt;Year = 2021*/</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">).</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="cm">/** 等效 S_DMI_Time-&gt;Month = 11*/</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">S_DMI_Time</span><span class="p">).</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>     <span class="cm">/** 等效 S_DMI_Time-&gt;Day = 1*/</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="函数与指针">函数与指针</h1>
+<h2 id="指针函数">指针函数</h2>
+<p>返回值是指针的函数；</p>
+<h2 id="函数指针">函数指针</h2>
+<p>函数名是一个地址常量，是函数的入口地址。</p>
+<p>解决问题，若不能依赖于数据结构, 那就得依赖于流程结构（一堆if-else）。</p>
+<p>函数通常使用流程结构来组织，一旦函数可以数据化，就能让数据结构也过来帮忙表达复杂的操作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cm">/** 声明一种指针类型，指向参数是void,返回值是int的函数*/</span>
+<span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Func</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">);</span>
+
+<span class="cm">/** 函数声明*/</span>
+<span class="kt">int</span> <span class="nf">F_Add</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">F_Sub</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+
+
+<span class="kt">int</span> <span class="nf">F_Math</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+   
+    <span class="cm">/** 定义一个函数指针，指向一个参数为(int,int)，返回值为int的函数*/</span>
+    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Add</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="p">);</span>
+    
+    <span class="cm">/** 函数指针赋值*/</span>
+    <span class="n">p_Add</span> <span class="o">=</span> <span class="n">F_Add</span><span class="err">；</span>
+    
+    <span class="cm">/** 用自定义的函数指针类型定义一个函数指针并初始化*/</span>
+    <span class="n">Func</span> <span class="n">p_Sub</span> <span class="o">=</span> <span class="n">F_Sub</span><span class="p">;</span>
+    
+    <span class="cm">/** 函数指针调用函数时加不加*都可以*/</span>
+    <span class="n">Num</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Add</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">*</span><span class="n">p_Sub</span><span class="p">)(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="o">=</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/**函数定义*/</span>
+<span class="kt">int</span> <span class="nf">F_Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">F_Sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="带函数指针形参的函数">带函数指针形参的函数</h3>
+<p>面向过程的是分层控制，带函数指针形参的函数是分层设计中的第三层抽象函数。</p>
+    </div>
+
+    
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/c%E8%AF%AD%E8%A8%80/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">C语言</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/c%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+            <span class="next-text nav-default">C和内存管理</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="jangqi/utterances"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:jangqi@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/jangqi" class="iconfont icon-github" title="github"></a>
+  <a href="https://jangqi.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>JangQi</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

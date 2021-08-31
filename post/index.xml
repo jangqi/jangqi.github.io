@@ -6,36 +6,27 @@
     <description>Recent content in Posts on 文文小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 06 Jun 2021 23:19:49 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Jul 2021 13:04:47 +0800</lastBuildDate>
     
 	<atom:link href="https://jangqi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>存储器</title>
-      <link>https://jangqi.github.io/post/%E5%AD%98%E5%82%A8%E5%99%A8%E5%8E%9F%E7%90%86/</link>
+      <link>https://jangqi.github.io/post/%E5%AD%98%E5%82%A8%E5%99%A8/</link>
       <pubDate>Wed, 28 Apr 2021 19:39:03 +0800</pubDate>
       
-      <guid>https://jangqi.github.io/post/%E5%AD%98%E5%82%A8%E5%99%A8%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://jangqi.github.io/post/%E5%AD%98%E5%82%A8%E5%99%A8/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210606193845.jpg&#34; alt=&#34;src=http___image.bubuko.com_info_201908_20190810123448402693.jpg&amp;refer=http___image.bubuko&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>处理器</title>
-      <link>https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8%E5%8E%9F%E7%90%86/</link>
+      <link>https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8/</link>
       <pubDate>Tue, 04 May 2021 18:10:45 +0800</pubDate>
       
-      <guid>https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://jangqi.github.io/post/%E5%A4%84%E7%90%86%E5%99%A8/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210606213330.jpg&#34; alt=&#34;v2-dcc305391dda826b70fe7d8d35121b6d_720w&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>编码</title>
-      <link>https://jangqi.github.io/post/%E7%BC%96%E7%A0%81/</link>
-      <pubDate>Wed, 05 May 2021 17:01:47 +0800</pubDate>
-      
-      <guid>https://jangqi.github.io/post/%E7%BC%96%E7%A0%81/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210505193425.png&#34; alt=&#34;C&#34; style=&#34;zoom: 80%;&#34; /&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,29 +39,29 @@
     </item>
     
     <item>
-      <title>c和指针</title>
-      <link>https://jangqi.github.io/post/c%E5%92%8C%E6%8C%87%E9%92%88/</link>
+      <title>c指针</title>
+      <link>https://jangqi.github.io/post/c%E6%8C%87%E9%92%88/</link>
       <pubDate>Wed, 05 May 2021 20:47:55 +0800</pubDate>
       
-      <guid>https://jangqi.github.io/post/c%E5%92%8C%E6%8C%87%E9%92%88/</guid>
+      <guid>https://jangqi.github.io/post/c%E6%8C%87%E9%92%88/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C和内存管理</title>
-      <link>https://jangqi.github.io/post/c%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+      <link>https://jangqi.github.io/post/c%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 06 Jun 2021 18:47:31 +0800</pubDate>
       
-      <guid>https://jangqi.github.io/post/c%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://jangqi.github.io/post/c%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>C和文件操作</title>
-      <link>https://jangqi.github.io/post/c%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <title>C文件操作</title>
+      <link>https://jangqi.github.io/post/c%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Sun, 06 Jun 2021 23:19:49 +0800</pubDate>
       
-      <guid>https://jangqi.github.io/post/c%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://jangqi.github.io/post/c%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
       <description></description>
     </item>
     
@@ -80,6 +71,15 @@
       <pubDate>Mon, 05 Apr 2021 18:45:49 +0800</pubDate>
       
       <guid>https://jangqi.github.io/post/scade-suite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>软件测试</title>
+      <link>https://jangqi.github.io/post/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Fri, 02 Jul 2021 13:04:47 +0800</pubDate>
+      
+      <guid>https://jangqi.github.io/post/%E6%B5%8B%E8%AF%95/</guid>
       <description></description>
     </item>
     
