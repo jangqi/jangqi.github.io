@@ -19,11 +19,14 @@
 <meta name="author" content="JangQi" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
 
 
+<meta name="robots" content="">
 
 
 
 
-<meta name="generator" content="Hugo 0.66.0 with theme even" />
+
+
+<meta name="generator" content="Hugo 0.84.0 with theme even" />
 
 
 <link rel="canonical" href="https://jangqi.github.io/post/%E7%BC%96%E7%A0%81/" />
@@ -36,23 +39,20 @@
 
 
 <link href="/sass/main.min.b87e76cd589b185c91369316107a6cff8b59e96cf13a7e3b13b57dfb75b68d79.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
 <meta property="og:title" content="编码" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jangqi.github.io/post/%E7%BC%96%E7%A0%81/" />
-<meta property="article:published_time" content="2021-05-05T17:01:47+08:00" />
-<meta property="article:modified_time" content="2021-05-05T17:01:47+08:00" />
+<meta property="og:url" content="https://jangqi.github.io/post/%E7%BC%96%E7%A0%81/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-01T12:54:15&#43;08:00" />
+<meta property="article:modified_time" content="2021-09-01T12:54:15&#43;08:00" />
+
 <meta itemprop="name" content="编码">
-<meta itemprop="description" content="">
-<meta itemprop="datePublished" content="2021-05-05T17:01:47&#43;08:00" />
-<meta itemprop="dateModified" content="2021-05-05T17:01:47&#43;08:00" />
-<meta itemprop="wordCount" content="2485">
-
-
-
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-09-01T12:54:15&#43;08:00" />
+<meta itemprop="dateModified" content="2021-09-01T12:54:15&#43;08:00" />
+<meta itemprop="wordCount" content="2563">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="编码"/>
 <meta name="twitter:description" content=""/>
@@ -80,50 +80,36 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="/categories/c%E8%AF%AD%E8%A8%80">
-        <li class="mobile-menu-item">c专栏</li>
+    <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86">
+        <li class="mobile-menu-item">计算机原理</li>
+      </a><a href="/categories/c%E8%AF%AD%E8%A8%80">
+        <li class="mobile-menu-item">c语言</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">分类</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">归档</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">关于</li>
-      </a><a href="">
-        <li class="mobile-menu-item"></li>
       </a>
   </ul>
-
-  
-
-
 </nav>
-
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
   <a href="/" class="logo">文文小站</a>
 </div>
 
-
-
-
-
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/categories/c%E8%AF%AD%E8%A8%80">c专栏</a>
+        <a class="menu-item-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86">计算机原理</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/c%E8%AF%AD%E8%A8%80">c语言</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/categories/">分类</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">归档</a>
-      </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">关于</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href=""></a>
       </li>
   </ul>
 </nav>
-
     </header>
 
     <main id="main" class="main">
@@ -135,12 +121,12 @@
       <h1 class="post-title">编码</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-05-05 </span>
+        <span class="post-time"> 2021-09-01 </span>
         <div class="post-category">
-            <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
+            <a href="/categories/c%E8%AF%AD%E8%A8%80/"> C语言 </a>
             </div>
-          <span class="more-meta"> 约 2485 字 </span>
-          <span class="more-meta"> 预计阅读 5 分钟 </span>
+          <span class="more-meta"> 约 2563 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
         
       </div>
     </header>
@@ -150,21 +136,23 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#数据">数据</a>
+    <li><a href="#数据"><strong>数据</strong></a>
       <ul>
-        <li><a href="#位bit">位（bit）</a></li>
-        <li><a href="#字节type">字节（type）</a></li>
-        <li><a href="#十六进制hex">十六进制(HEX)</a></li>
-        <li><a href="#内存地址">内存地址</a></li>
-        <li><a href="#数据类型">数据类型</a></li>
-        <li><a href="#数据存储">数据存储</a></li>
-        <li><a href="#变量">变量</a></li>
-        <li><a href="#指针">指针</a></li>
+        <li><a href="#进制"><strong>进制</strong></a></li>
+        <li><a href="#位"><strong>位</strong></a></li>
+        <li><a href="#字节"><strong>字节</strong></a></li>
+        <li><a href="#内存地址"><strong>内存地址</strong></a></li>
+        <li><a href="#数据类型"><strong>数据类型</strong></a></li>
+        <li><a href="#数据存储"><strong>数据存储</strong></a></li>
+        <li><a href="#变量"><strong>变量</strong></a></li>
+        <li><a href="#常量"><strong>常量</strong></a></li>
+        <li><a href="#初始化"><strong>初始化</strong></a></li>
+        <li><a href="#指针"><strong>指针</strong></a></li>
       </ul>
     </li>
-    <li><a href="#控制">控制</a>
+    <li><a href="#控制"><strong>控制</strong></a>
       <ul>
-        <li><a href="#位运算">位运算</a>
+        <li><a href="#位运算"><strong>位运算</strong></a>
           <ul>
             <li><a href="#按位逻辑运算符">按位逻辑运算符</a></li>
             <li><a href="#按位逻辑运算符的用法">按位逻辑运算符的用法</a></li>
@@ -172,7 +160,7 @@
             <li><a href="#移位运算符的用法">移位运算符的用法</a></li>
           </ul>
         </li>
-        <li><a href="#内存拷贝">内存拷贝</a></li>
+        <li><a href="#内存拷贝"><strong>内存拷贝</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -180,79 +168,91 @@
   </div>
 </div>
     <div class="post-content">
-      <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210505193425.png" alt="C" style="zoom: 80%;" /></p>
-<h1 id="数据">数据</h1>
+      <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210505193425.png" alt="img" style="zoom: 67%;" /></p>
+<h1 id="数据"><strong>数据</strong></h1>
 <hr>
-<h2 id="位bit">位（bit）</h2>
-<p>位是内存中数据存储的最小单位。一位存放一个二进制数“0”或“1”。</p>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210514101241.png" alt="bit" style="zoom: 50%;" /></p>
-<h2 id="字节type">字节（type）</h2>
-<p>字节是内存中数据存储的基本单位，一字节是8位bit，位编号从D0(低阶位)-D7（高阶位）。</p>
-<p>字节是硬件访问内存的最小单位，因为硬件是通过地址总线访问内存，通过共享地址可以访问8位bit，即1字节，所以操作系统在管理内存时，是以字节为基本单位。那如何控制它的某一位呢？就需要通过“位运算”，即通过软件的方式来控制。</p>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210514100750.png" alt="未命名文件(11)" style="zoom: 50%;" /></p>
-<h2 id="十六进制hex">十六进制(HEX)</h2>
+<h2 id="进制"><strong>进制</strong></h2>
 <ul>
 <li>
-<p><strong>十六进制计数法</strong></p>
-<p>0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F表示个位，其中A,B,C,D,E,F分别表示十进制中的10,11,12,13,14,15。</p>
+<p><strong>二进制</strong></p>
+<p>二进制计数：0，1表示个位。</p>
 </li>
 <li>
-<p><strong>十六进制表示法</strong></p>
-<p>“0x”是十六进制的前缀，“H”是十六进制的后缀，都是表示十六进制数。</p>
+<p><strong>十进制</strong></p>
+<p>十进制计数：0，1，2，3，4，5，6，7，8，9表示个位。</p>
 </li>
 <li>
-<p><strong>十六进制转十进制：</strong></p>
-<p>0×A3F= $10×16^2+3×16^2+15×16^0 = 2623(十进制)$</p>
+<p><strong>十六进制</strong></p>
+<p>十六进制计数：0，1，2，3，4，5，6，7，8，9，A，B，C，D，E，F表示个位，  其中A，B，C，D，E，F分别表示十进制中的10，11，12，13，14，15。</p>
+<p>十六进制表示：前缀表示用&quot;0x&quot;，后缀表示用&quot;H&quot;。</p>
 </li>
 <li>
-<p><strong>十六进制转二进制：</strong></p>
-<p>一个十六进制位对应四位二进制数，因此，两位十六进制数恰好表示一个字节值。第一个十六进制位表示前四位，第二个十六进制位表示后四位。</p>
-<p>0×C2 =$1100 0010（二进制）$</p>
+<p><strong>进制转换</strong></p>
+<p>二进制转十六进制：四位二进制数对应一位十六进制数。</p>
+<p>十六进制转二进制：一位十六进制数对应四位二进制数。</p>
 </li>
 </ul>
-<h2 id="内存地址">内存地址</h2>
-<p>内存以字节为单位进行编址，一个地址编号对应一个字节的存储空间，操作系统把字节作为内存寻址的最小单元。</p>
-<p>32位的操作系统（有32根地址线），可寻址$2^{32}$个字节（4GB）的内存空间，其地址编号为32位bit，占4字节，适合用8位十六进制数表示。</p>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210514102642.png" alt="未命名文件(11)" style="zoom: 80%;" /></p>
-<h2 id="数据类型">数据类型</h2>
+<h2 id="位"><strong>位</strong></h2>
+<p>位是内存中数据存储的最小单位。一位存放一个二进制数“0”或“1”。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210514101241.png" alt="bit" style="zoom: 33%;" /></p>
+<h2 id="字节"><strong>字节</strong></h2>
+<p>字节是硬件访问内存的最小单位，一字节是8位bit，从D0位(低阶位)-D7位（高阶位）。<br>
+因为硬件是通过地址总线访问内存，通过共享地址可以访问8位bit，即1字节，所以操作系统在管理内存时，是以字节为基本单位。<br>
+那如何控制它的某一位呢？就需要通过“位运算”，即通过软件的方式来控制。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210514100750.png" alt="未命名文件(11)" style="zoom: 33%;" /></p>
+<h2 id="内存地址"><strong>内存地址</strong></h2>
+<p>操作系统把字节作为内存寻址的最小单元，所以内存以字节为单位进行编址，一个地址编号对应一个字节的存储空间。</p>
+<p>32位的操作系统（有32根地址线），地址编号为32位bit（可用8位十六进制数表示），可寻址$2^{32}$个字节（4GB）存储空间。</p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210514102642.png" alt="未命名文件(11)" style="zoom: 33%;" /></p>
+<h2 id="数据类型"><strong>数据类型</strong></h2>
 <p>数据类型决定数据存储时占用内存地址的长度。</p>
 <ul>
 <li>
-<p><strong>字符</strong></p>
-<p>单个字母和数字都是占1个字节的8位bit编码表示，通过ASCII 码表来进行映射。比如A，ASCII码值是65，对应的01串是 01000001。</p>
+<p><strong>字符</strong>：单个字母和数字都是占8位bit编码表示，通过ASCII 码表来进行映射。比如A，ASCII码值是65，对应的二进制数是 01000001。</p>
 </li>
 <li>
-<p><strong>整数</strong></p>
-<p>整数一般是占4个字节的32位bit编码表示，表示范围为-2147483648~+2147483647， 无符号表示范围为0~4294967295。</p>
+<p><strong>整数</strong>：整数一般占32位bit编码表示，有符号表示范围为-2147483648~+2147483647， 无符号表示范围为0~4294967295。</p>
 </li>
 </ul>
-<h2 id="数据存储">数据存储</h2>
-<p>一个数据存储的“实际地址”=首地址+延续长度（数据类型决定地址的延续长度）。</p>
-<p>数据存储的模式按字节顺序分为”大端模式“和”小端模式“，</p>
-<p><strong>大端存储模式</strong>：数据高字节存在低地址。</p>
-<p><strong>小端存储模式</strong>：数据低字节存在低地址。</p>
-<p>但无论是“大端模式”还是“小端模式”存储数据，读写数据时一定都是从内存的低地址向高地址依次进行读写。</p>
+<h2 id="数据存储"><strong>数据存储</strong></h2>
+<p>一个数据存储的“实际地址”=首地址+延续长度。</p>
+<p>数据存储按字节顺序分为”大端模式“和”小端模式“，“大端模式”是数据高字节存在低地址；“小端模式”是数据低字节存在低地址。</p>
+<p>但无论是“大端模式”还是“小端模式”，读写数据时一定都是从内存的低地址向高地址依次进行读写。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210514112504.png" alt="未命名文件(11)1(1)" style="zoom: 80%;" /></p>
-<h2 id="变量">变量</h2>
-<p>编程的本质是操作数据，数据是存储在内存中，所以程序运行的实质是寻址内存。</p>
-<p>高级语言的特性之一就是用名字而不是地址来寻址内存，</p>
-<p>“变量名”是“内存地址”映射的一个助记名称，访问变量就是直接访问内存。</p>
+<h2 id="变量"><strong>变量</strong></h2>
+<p>编程的本质是操作数据，数据是存储在内存中，程序运行的实质是寻址内存。</p>
+<p>高级语言的特性之一就是用名字而不是地址来寻址内存，“变量名”只是“内存地址”映射的一个助记名称，访问变量就是访问内存。</p>
 <p>虽然编译器实现了“变量名“与”内存地址“的映射关系，但程序编译时依旧把”变量名“转换成了”内存地址“，程序运行时依旧是通过地址访问内存。</p>
-<h2 id="指针">指针</h2>
-<p><strong>地址是常量，</strong></p>
-<p>“&amp;运算符”取的是变量的首地址是一个地址常量，地址常量不能做左值进行赋值，地址常量的算数运算也没有意义。</p>
-<p><strong>指针是变量，</strong></p>
-<p>指针变量存储的是内存地址，“解引用”指针是间接访问指针存储的地址上的值。</p>
-<p>指针指向的类型决定&quot;解引用&quot;指针时，访问地址的延续长度。</p>
+<h2 id="常量"><strong>常量</strong></h2>
+<p>常量也只是“内存地址”映射的一个助记名称，但常量在“初始化”完成后就不能改变。</p>
+<h2 id="初始化"><strong>初始化</strong></h2>
+<p>初始化是指为”变量“和”常量“第一次赋值的过程。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">x</span><span class="p">;</span>         <span class="cm">/** 声明了一个整数类型的变量 x，而没有初始化这个变量*/</span> 
+
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="err">；</span><span class="cm">/**  声明的同时完成变量x的初始化，赋予初始值1*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="指针"><strong>指针</strong></h2>
+<p>指针是变量，指针存储的是内存地址，“解引用”指针是间接访问指针存储的地址上的值，指针指向的类型决定访问地址的延续长度。</p>
+<p>地址是常量，“&amp;运算符”取的是变量的首地址是一个地址常量，地址常量不能做左值就不能赋值，地址常量的算数运算也没有意义。</p>
 <p>指针提供了有意义的地址算术运算。</p>
 <p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210526145149.png" alt="未命名文件(11)" style="zoom:80%;" /></p>
-<h1 id="控制">控制</h1>
+<h1 id="控制"><strong>控制</strong></h1>
 <hr>
-<p>计算机的硬件层只会”拷贝“和”位运算“，通过一层层抽象才做出了复杂运算和控制。</p>
-<h2 id="位运算">位运算</h2>
-<p>c语言提供按位(bit)的操作。</p>
-<p>单独操作位(bit)是必要的，例如，通常向硬件设备发送一两个字节来控制这些设备，其中每个位(bit)都有特定的含义。</p>
-<p>c语言提供&quot;按位逻辑运算符&quot;和&quot;移位运算符&rdquo;，为方便理解位操作可以用二进制数，但在实际程序程序中，一般用十六进制数而不是二进制数。</p>
+<p>数据处理由CPU来执行完成，计算机其实只会两件事，“拷贝”与“位运算”。</p>
+<p>拷贝，就是将一个值从一处内存空间挪到另一处内存空间。</p>
+<p>位运算，就是将指定的操作数的各个位进行运算(逻辑运算)得到新的值，任何数学计算都可以通过位运算来完成。</p>
+<h2 id="位运算"><strong>位运算</strong></h2>
+<p>c语言提供按位的操作。</p>
+<p>单独操作位是必要的，例如，通常向硬件设备发送一两个字节来控制这些设备，其中每个位都有特定的含义。</p>
+<p>c语言提供&quot;按位逻辑运算符&quot;和&quot;移位运算符&quot;，为方便理解位操作可以用二进制数，但在实际程序程序中，一般用十六进制数而不是二进制数。</p>
 <h3 id="按位逻辑运算符">按位逻辑运算符</h3>
 <ul>
 <li>
@@ -266,6 +266,14 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-c" data-lang="c"><span class="o">~</span><span class="err">（</span><span class="mi">10011010</span><span class="err">）</span> <span class="cm">/** 表达式*/</span>
   <span class="mo">01100101</span>        <span class="cm">/** 结果值*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -282,6 +290,14 @@
 <span class="err">（</span><span class="mo">00010001</span><span class="err">）</span>                            <span class="cm">/** 结果值*/</span>
 </code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+</code></pre></td></tr></table>
+</div>
 </div></li>
 <li>
 <p><strong>按位或：|</strong></p>
@@ -295,6 +311,14 @@
 <pre class="chroma"><code class="language-c" data-lang="c"><span class="err">（</span><span class="mi">10010011</span><span class="err">）</span><span class="o">|</span><span class="err">（</span><span class="mo">00111101</span><span class="err">）</span><span class="c1">//表达式
 </span><span class="c1"></span><span class="err">（</span><span class="mi">10111111</span><span class="err">）</span><span class="c1">//结果值
 </span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -323,6 +347,14 @@
 <pre class="chroma"><code class="language-c" data-lang="c"><span class="k">if</span><span class="p">((</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">MASK</span><span class="p">)</span> <span class="o">==</span> <span class="n">MASK</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+</code></pre></td></tr></table>
+</div>
 </div></li>
 </ul>
 <h3 id="移位运算符">移位运算符</h3>
@@ -338,9 +370,9 @@
 </ul>
 <h3 id="移位运算符的用法">移位运算符的用法</h3>
 <p>​	用于从大的单元中取一些指定位（先移位，后掩码）。</p>
-<h2 id="内存拷贝">内存拷贝</h2>
+<h2 id="内存拷贝"><strong>内存拷贝</strong></h2>
 <p>把源内存地址区的数据，按字节拷贝到目标内存地址区。</p>
-<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210508224806.png" alt="未命名文件(9)(2)" style="zoom: 80%;" /></p>
+<p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210508224806.png" alt="未命名文件(9)(2)" style="zoom: 33%;" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -377,7 +409,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210508222724.png" alt="未命名文件(9)(1)" style="zoom: 80%;" /></p>
+</div><p><img src="https://picgo-1305338183.cos.ap-hongkong.myqcloud.com/20210508222724.png" alt="未命名文件(9)(1)" style="zoom: 33%;" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -506,7 +538,7 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/%E5%A4%84%E7%90%86%E5%99%A8%E5%8E%9F%E7%90%86/">
+        <a class="prev" href="/post/%E5%A4%84%E7%90%86%E5%99%A8/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">处理器</span>
             <span class="prev-text nav-mobile">上一篇</span>
@@ -525,14 +557,9 @@
   
 
   
-    <script src="https://utteranc.es/client.js"
-            repo="jangqi/utterances"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+  
+  
 
       </div>
     </main>
@@ -568,18 +595,16 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
         }
     };
   </script>
