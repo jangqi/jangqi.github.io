@@ -52,7 +52,7 @@
 <meta itemprop="name" content="c关键字">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2021-09-02T21:21:38&#43;08:00" />
 <meta itemprop="dateModified" content="2021-09-02T21:21:38&#43;08:00" />
-<meta itemprop="wordCount" content="1101">
+<meta itemprop="wordCount" content="1525">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="c关键字"/>
 <meta name="twitter:description" content=""/>
@@ -125,8 +125,8 @@
         <div class="post-category">
             <a href="/categories/c%E8%AF%AD%E8%A8%80/"> c语言 </a>
             </div>
-          <span class="more-meta"> 约 1101 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 1525 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
         
       </div>
     </header>
@@ -138,12 +138,13 @@
   <ul>
     <li><a href="#c关键字"><strong>c关键字</strong></a>
       <ul>
+        <li><a href="#typedef"><strong>typedef</strong></a></li>
+        <li><a href="#sizeof"><strong>sizeof</strong></a></li>
         <li><a href="#const"><strong>const</strong></a></li>
         <li><a href="#define"><strong>define</strong></a></li>
         <li><a href="#static"><strong>static</strong></a></li>
         <li><a href="#extern"><strong>extern</strong></a></li>
         <li><a href="#void"><strong>void</strong></a></li>
-        <li><a href="#typedef"><strong>typedef</strong></a></li>
       </ul>
     </li>
   </ul>
@@ -153,7 +154,210 @@
     <div class="post-content">
       <h1 id="c关键字"><strong>c关键字</strong></h1>
 <hr>
-<h2 id="const"><strong>const</strong></h2>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th style="text-align:left">关键字</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:left">short</td>
+<td>声明短整型变量或函数</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:left">int</td>
+<td>声明整型变量或函数</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:left">long</td>
+<td>声明长整型变量或函数</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:left">float</td>
+<td>声明浮点型变量或函数</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:left">double</td>
+<td>声明双精度变量或函数</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:left">char</td>
+<td>声明字符型变量或函数</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:left">struct</td>
+<td>声明结构体变量或函数</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:left">union</td>
+<td>声明共同体类型</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:left">enum</td>
+<td>声明枚举类型</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:left">unsigned</td>
+<td>声明无符号类型变量或函数</td>
+</tr>
+<tr>
+<td>11</td>
+<td style="text-align:left">signed</td>
+<td>声明有符号类型变量或函数</td>
+</tr>
+<tr>
+<td>12</td>
+<td style="text-align:left">sizeof</td>
+<td>计算数据类型长度</td>
+</tr>
+<tr>
+<td>13</td>
+<td style="text-align:left">typedef</td>
+<td>用以给数据类型取别名</td>
+</tr>
+<tr>
+<td>14</td>
+<td style="text-align:left">auto</td>
+<td>声明自动变量</td>
+</tr>
+<tr>
+<td>15</td>
+<td style="text-align:left">const</td>
+<td>声明只读变量</td>
+</tr>
+<tr>
+<td>16</td>
+<td style="text-align:left">static</td>
+<td>声明静态变量</td>
+</tr>
+<tr>
+<td>17</td>
+<td style="text-align:left">extern</td>
+<td>声明引用其他源文件中已经定义的外部变量</td>
+</tr>
+<tr>
+<td>18</td>
+<td style="text-align:left">register</td>
+<td>声明寄存器变量</td>
+</tr>
+<tr>
+<td>19</td>
+<td style="text-align:left">volatile</td>
+<td>说明变量在程序执行中可被隐含地改变</td>
+</tr>
+<tr>
+<td>20</td>
+<td style="text-align:left">void</td>
+<td>声明函数无返回值或无参数，声明无类型指针</td>
+</tr>
+<tr>
+<td>21</td>
+<td style="text-align:left">if</td>
+<td>条件语句</td>
+</tr>
+<tr>
+<td>22</td>
+<td style="text-align:left">else</td>
+<td>条件语句分支</td>
+</tr>
+<tr>
+<td>23</td>
+<td style="text-align:left">switch</td>
+<td>选择语句</td>
+</tr>
+<tr>
+<td>24</td>
+<td style="text-align:left">case</td>
+<td>选择语句分支</td>
+</tr>
+<tr>
+<td>25</td>
+<td style="text-align:left">default</td>
+<td>选择语句缺省分支</td>
+</tr>
+<tr>
+<td>26</td>
+<td style="text-align:left">for</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>27</td>
+<td style="text-align:left">while</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>28</td>
+<td style="text-align:left">do</td>
+<td>循环语句</td>
+</tr>
+<tr>
+<td>29</td>
+<td style="text-align:left">goto</td>
+<td>无条件跳转语句</td>
+</tr>
+<tr>
+<td>30</td>
+<td style="text-align:left">continue</td>
+<td>结束当前循环，开始下一轮循环</td>
+</tr>
+<tr>
+<td>31</td>
+<td style="text-align:left">break</td>
+<td>跳出当前循环</td>
+</tr>
+<tr>
+<td>32</td>
+<td style="text-align:left">return</td>
+<td>返回语句（可以带参数，也可不带参数）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typedef"><strong>typedef</strong></h2>
+<p>用以给数据类型取别名，以后可以用别名定义变量。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">kcg_char</span><span class="p">;</span>
+<span class="n">kcg_char</span> <span class="n">a</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="sizeof"><strong>sizeof</strong></h2>
+<p>计算并返回某个数据类型或变量所占用内存的字节数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">str</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;hello&#34;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">len_a</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>       <span class="cm">/** len_a=4*/</span>
+<span class="kt">int</span> <span class="n">len_arr</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>  <span class="cm">/** len_a=12*/</span>
+<span class="kt">int</span> <span class="n">len_str</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>   <span class="cm">/** len_a=6*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="const"><strong>const</strong></h2>
 <p>定义只读变量， const 修饰的变量的值不允许改变，即不允许给它重新赋值。</p>
 <p>数组的长度不能是变量，虽然 const 定义的是只读变量，相当于定义一个常量。但是只读变量也是变量，所以 const 定义的变量仍然不能作为数组的长度。</p>
 <div class="highlight"><div class="chroma">
@@ -175,8 +379,8 @@
 <p>修饰一个函数，限制其作用域只在定义该函数的源文件内有效，其他源文件中不能使用。</p>
 <h2 id="extern"><strong>extern</strong></h2>
 <p>在一个源文件中想引用另外一个源文件中已经定义的外部变量，需要用 extern 加以声明，从声明处起，合法地使用该外部变量。</p>
-<p>对变量而言，如果想一个本源文件中使用另一个源文件已经定义的外部变量，就需要在使用前用extern声明该变量（或者在头文件中用extern声明）。</p>
-<p>对函数而言，如果想一个本源文件中使用另一个源文件已经定义的函数，就需要在使用前用声明该函数，声明函数加不加extern都没关系，所以在头文件中函数可以不用加extern。</p>
+<p>对变量而言，如果想在一个源文件中使用另一个源文件已经定义的外部变量，就需要在使用前用extern声明该变量，或者在头文件中用extern声明。</p>
+<p>对函数而言，如果想在一个源文件中使用另一个源文件已经定义的函数，就需要在使用前用声明该函数，声明函数加不加extern都没关系，所以在头文件中函数可以不用加extern。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -269,16 +473,6 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="o">*</span> <span class="nf">memcpy</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">src</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">len</span><span class="p">);</span>
 <span class="kt">void</span> <span class="o">*</span> <span class="nf">memset</span> <span class="p">(</span> <span class="kt">void</span> <span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">num</span> <span class="p">);</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="typedef"><strong>typedef</strong></h2>
-<p>用以给数据类型取别名，以后可以用别名定义变量。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">kcg_char</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div>
